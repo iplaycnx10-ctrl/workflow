@@ -11,7 +11,7 @@ def render_theme():
 
 def open_module(t,d): st.markdown(f'<div class="module-wrap"><div class="module-title">{t}</div><p class="module-desc">{d}</p>', unsafe_allow_html=True)
 def close_module(): st.markdown('</div>', unsafe_allow_html=True)
-def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — Smoking Candy Workflow</h1><div class="subtitle">แยก Modular เป็นขั้นตอน: วางแผนงาน → ปัญหาที่เจอ → แนวทางแก้ไข</div></div>', unsafe_allow_html=True)
+def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — Smoking Candy Workflow</h1><div class="subtitle">แยก Modular เป็นขั้นตอน: วางแผนงาน → ปัญหาที่เจอ → แนวทางแก้ไข → รายงานผู้บริหาร</div></div>', unsafe_allow_html=True)
 
 def render_budget_plan():
     open_module('00_BUDGET_AND_AD_MANAGEMENT_PLAN','งบเฉลี่ยสำหรับเริ่มยิงและแผนแบ่งงบตอน Manage Ads')
@@ -120,6 +120,89 @@ def render_action_plan_summary():
     st.markdown('<div class="insight-card pastel-amber"><span class="pill amber">สรุปแนวคิดหลัก</span><h4>ตอนนี้ไม่ใช่แค่เปลี่ยนแอด แต่ต้องเปลี่ยนวิธีคัดคน</h4><p>ปัญหาหลักคือระบบเดิมอาจหา Traffic ได้ แต่ไม่ได้การันตีว่าคนเหล่านั้นมี Intent และกำลังซื้อจริง แนวทางแก้คือกลับมาคุม Persona, Creative, Offer, Retarget และการอ่านผลด้วยมือก่อน เมื่อเจอตัวที่ชนะค่อย Scale</p></div>', unsafe_allow_html=True)
     close_module()
 
+def render_exec_summary():
+    open_module('01_EXECUTIVE_SUMMARY','Key Message: Fix Classic ไม่ใช่สินค้าปิดง่ายจาก Inbox ตรงอีกต่อไป ต้องเปลี่ยนจาก Message Funnel เป็น Data-led Funnel')
+    c1,c2,c3=st.columns(3)
+    with c1: st.markdown('<div class="mini-card pastel-rose"><span class="pill rose">CURRENT RISK</span><h4>Lead เยอะ แต่คุณภาพต่ำ</h4><p>ลูกค้าทักถามราคาแล้วหาย เพราะยังไม่ผ่านชั้นกรองข้อมูล ราคา วิธีใช้ และ expectation ก่อนเข้าแชท</p></div>', unsafe_allow_html=True)
+    with c2: st.markdown('<div class="mini-card pastel-amber"><span class="pill amber">STRATEGIC SHIFT</span><h4>เปลี่ยน Funnel หลัก</h4><p>จาก Ads → Inbox → Admin เป็น Ads → Landing Page → LINE OA → Admin เพื่อกรองและเก็บข้อมูลก่อนปิดการขาย</p></div>', unsafe_allow_html=True)
+    with c3: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">EXPECTED OUTCOME</span><h4>ลด Lead ห่วย เพิ่ม Lead คุณภาพ</h4><p>ผู้บริหารจะเห็นว่าเงินโฆษณาถูกใช้เพื่อหา Qualified Lead ไม่ใช่แค่หา Message ถูก</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_situation():
+    open_module('02_CURRENT_SITUATION_ANALYSIS','สินค้า Fix Classic มี demand จริง แต่ราคาต่อการตัดสินใจสูง และต้องอาศัยการอธิบายก่อนปิด')
+    c1,c2,c3,c4=st.columns(4)
+    data=[('ราคา/ซอง','350฿','ราคาสูงเมื่อเทียบกับการตัดสินใจจากแอด','top','pastel-blue'),('จำนวน/ซอง','10 เม็ด','เฉลี่ยประมาณ 35 บาทต่อเม็ด','amber','pastel-amber'),('Customer Perception','Cost/Day สูง','ถ้าต้องใช้หลายเม็ดต่อวัน ลูกค้าจะรู้สึกว่าค่าใช้จ่ายสูง','rose','pastel-rose'),('Sales Reality','ต้องอธิบาย','ไม่ใช่ impulse purchase ต้องใช้ข้อมูล รีวิว FAQ และแอดมินช่วยปิด','bot','pastel-mint')]
+    for col,x in zip([c1,c2,c3,c4],data):
+        with col: st.markdown(f'<div class="budget-card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><div class="budget-number">{x[1]}</div><p>{x[2]}</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_problem_breakdown():
+    open_module('03_PAIN_POINT_BREAKDOWN','ปัญหาหลักไม่ใช่แค่แอดแพง แต่ Funnel ไม่มีชั้นกรองก่อนเข้าแชท')
+    p1,p2,p3=st.columns(3)
+    with p1: st.markdown('<div class="ci-card pastel-rose"><span class="pill rose">PAIN 01</span><h3>ไม่มี Landing Page เป็นชั้นกรอง</h3><p>Funnel ปัจจุบันเป็น Ads → Inbox/Chat → Admin ทำให้ลูกค้ายังไม่เห็นราคา วิธีใช้ รีวิว FAQ และเงื่อนไขผลลัพธ์ก่อนทัก</p><div class="ci-meta"><div>ราคา</div><div>วิธีใช้</div><div>เหมาะ/ไม่เหมาะกับใคร</div><div>FAQ / รีวิว</div></div></div>', unsafe_allow_html=True)
+    with p2: st.markdown('<div class="ci-card pastel-amber"><span class="pill amber">PAIN 02</span><h3>Meta ไม่มี Signal คุณภาพ</h3><p>ระบบเห็นเพียง Impression, Click, Message แต่ไม่รู้ว่าใครอ่านราคาแล้วสนใจ ใครกด LINE หลังอ่าน และใครรับราคาได้จริง</p><div class="ci-meta"><div>Scroll</div><div>Price Seen</div><div>Line Click</div><div>Price Accepted</div></div></div>', unsafe_allow_html=True)
+    with p3: st.markdown('<div class="ci-card pastel-lav"><span class="pill mid">PAIN 03</span><h3>ข้อมูลเก่าไม่สะอาดสำหรับ LAL</h3><p>Lead เดิมอาจปนคนถามราคาแล้วหาย คนไม่มีกำลังซื้อ คนหวังผลเกินจริง หรือคนทักเล่น จึงยังไม่ควรใช้เป็นฐาน Lookalike หลัก</p><div class="ci-meta"><div>Bad Lead</div><div>Lost Price</div><div>No Reply</div><div>Negative</div></div></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_funnel_strategy():
+    open_module('04_FUNNEL_STRATEGY','Strategic Solution: ใช้ Landing Page เป็นตัวกรอง + ตัวเก็บข้อมูล ก่อนส่งเข้า LINE OA')
+    st.markdown('<div class="visual-flow">', unsafe_allow_html=True)
+    c1,a1,c2,a2,c3,a3,c4=st.columns([1,.12,1,.12,1,.12,1])
+    with c1: st.markdown('<div class="flow-node pastel-blue"><span class="pill top">META ADS</span><h4>Cold Traffic</h4><p>Price upfront / POV / Problem Routine</p></div>', unsafe_allow_html=True)
+    with a1: st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
+    with c2: st.markdown('<div class="flow-node pastel-amber"><span class="pill amber">LANDING PAGE</span><h4>Filter Layer</h4><p>ราคา วิธีใช้ FAQ รีวิว เงื่อนไขผลลัพธ์</p></div>', unsafe_allow_html=True)
+    with a2: st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
+    with c3: st.markdown('<div class="flow-node pastel-mint"><span class="pill bot">LINE OA</span><h4>Qualified Intent</h4><p>คนที่อ่านแล้วกดเข้า LINE มีคุณภาพสูงกว่า Message ดิบ</p></div>', unsafe_allow_html=True)
+    with a3: st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
+    with c4: st.markdown('<div class="flow-node pastel-pink"><span class="pill pink">ADMIN CLOSE</span><h4>Close & Status</h4><p>Mark status เพื่อวัดคุณภาพ Lead และยอดขายจริง</p></div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_measurement():
+    open_module('05_MEASUREMENT_SYSTEM','ระบบวัดผลใหม่ต้องเห็นทั้ง Ad Cost, Landing Behavior, Chat Quality และ Revenue')
+    c1,c2,c3,c4,c5=st.columns(5)
+    blocks=[('META ADS','Spend, CPM, CTR, CPC, LPV, Creative','top','pastel-blue'),('LDP / GA4','PageView, Scroll, Click LINE, Time on page','amber','pastel-amber'),('LINE / CHAT','New Lead, Price Accepted, Lost Price','mid','pastel-lav'),('ORDERS','Order, Revenue, Product, Admin','bot','pastel-mint'),('DASHBOARD','n8n → Sheet/BigQuery → Looker → Alert','pink','pastel-pink')]
+    for col,x in zip([c1,c2,c3,c4,c5],blocks):
+        with col: st.markdown(f'<div class="mini-card {x[3]}"><span class="pill {x[2]}">{x[0]}</span><p>{x[1]}</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_kpi_guardrail():
+    open_module('06_KPI_AND_GUARDRAIL','ไม่ควรวัดแค่ Cost per Message เพราะข้อความถูกไม่ได้แปลว่าขายได้')
+    k1,k2=st.columns(2)
+    with k1: st.markdown('<div class="insight-card pastel-sky"><span class="pill top">KPI STRUCTURE</span><h4>วัดคุณภาพ Funnel ทั้งเส้น</h4><p>Cost per LPV, Cost per LINE Click, Cost per Price Accepted, Cost per Qualified Lead, Cost per Order, CAC, ROAS จริง, Lost Price Rate, Close Rate, Revenue per Lead</p></div>', unsafe_allow_html=True)
+    with k2: st.markdown('<div class="insight-card pastel-rose"><span class="pill rose">KILL RULE</span><h4>ตั้ง Guardrail เพื่อไม่ให้เผาเงินซ้ำ</h4><p>Spend ≥300 ไม่มี LPV/LINE Click หยุด Creative, Spend ≥500 ไม่มี Qualified Lead หยุด Ad Set, Spend ≥1,000 ไม่มี Order หยุด Test, Lost Price Rate >70% ต้องปรับ Creative/Offer</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_data_clean():
+    open_module('07_ACCOUNT_AND_AUDIENCE_STRATEGY','เก็บ Trust ของเพจเดิม แต่ตัด Signal ห่วยจากบัญชี/ข้อมูลเดิม')
+    c1,c2,c3=st.columns(3)
+    with c1: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">KEEP</span><h4>ใช้เพจเดิม</h4><p>ถ้า Page Quality ไม่ติดปัญหา ให้เก็บ social proof และ trust เดิมไว้</p></div>', unsafe_allow_html=True)
+    with c2: st.markdown('<div class="mini-card pastel-blue"><span class="pill top">RESET</span><h4>ใช้ Ad Account / Pixel ใหม่</h4><p>ใช้บัญชีสะอาด เช่น fix k1, Dataset ใหม่, UTM ใหม่, Audience ใหม่ และไม่ใช้ LAL จาก lead เก่า</p></div>', unsafe_allow_html=True)
+    with c3: st.markdown('<div class="mini-card pastel-amber"><span class="pill amber">SEGMENT</span><h4>แยก Customer List</h4><p>Buyer จริง, High Value Buyer, Bad Lead / Lost Price ต้องแยกกัน เพื่อใช้ retarget หรือ exclude ได้แม่นขึ้น</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_creative():
+    open_module('08_CREATIVE_DIRECTION','ลด Overclaim และเปลี่ยน Positioning เป็นตัวช่วยคุมพฤติกรรมระหว่างวัน')
+    c1,c2=st.columns(2)
+    with c1: st.markdown('<div class="ci-card pastel-rose"><span class="pill rose">AVOID</span><h3>ลดคำเคลมที่แรงเกินไป</h3><p>หลีกเลี่ยงข้อความประเภท เลิกบุหรี่ได้, ลดสูบตั้งแต่เม็ดแรก, หายอยาก, ไม่กลับไปสูบอีก, เห็นผลทันที เพราะเพิ่มความคาดหวังเกินจริงและเสี่ยง negative feedback</p></div>', unsafe_allow_html=True)
+    with c2: st.markdown('<div class="ci-card pastel-mint"><span class="pill bot">USE</span><h3>สื่อสารแบบคุม Expectation</h3><p>ลูกอมสมุนไพรสำหรับคนสูบ, พกไว้อมหลังสูบ, ตัวช่วยระหว่างวัน, ช่วยให้ปากสดชื่น, สำหรับคนที่อยากค่อย ๆ คุมพฤติกรรมสูบ, อ่านรายละเอียดก่อนรับโปรใน LINE</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_roadmap():
+    open_module('09_7_DAY_ROADMAP','Execution Plan 7 วัน เพื่อย้ายจาก Funnel เดิมสู่ Data-led Funnel')
+    d1,d2,d3,d4=st.columns(4)
+    steps=[('DAY 1','สร้าง LDP','ราคา/แพ็ก/วิธีใช้/FAQ/รีวิว + ปุ่ม LINE พร้อม tracking','pink','pastel-pink'),('DAY 2','ตั้ง Tracking','UTM, PageView, ViewContent, Scroll, LineClick, n8n, Dashboard','top','pastel-blue'),('DAY 3','เตรียม Data','Buyer list, Bad lead/lost price, สถานะแชทใหม่, เทรนแอดมิน','amber','pastel-amber'),('DAY 4','Launch Clean Test','งบ 300–500/วัน, บัญชีสะอาด, Broad + Creative 3–5 ชุด, ยิงเข้า LDP','bot','pastel-mint')]
+    for col,x in zip([d1,d2,d3,d4],steps):
+        with col: st.markdown(f'<div class="date-card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><h4>{x[1]}</h4><p>{x[2]}</p></div>', unsafe_allow_html=True)
+    d5,d6,d7=st.columns(3)
+    with d5: st.markdown('<div class="date-card pastel-sky"><span class="pill top">DAY 5–6</span><h4>Monitor</h4><p>ดู LPV, LINE Click, Price Accepted, Lost Price ปิดตัวที่เข้า Kill Rule และเก็บตัวที่มี Qualified Lead</p></div>', unsafe_allow_html=True)
+    with d6: st.markdown('<div class="date-card pastel-lav"><span class="pill mid">DAY 7</span><h4>Executive Review</h4><p>สรุปว่า Creative ไหนพาคนรับราคา Audience ไหนคุณภาพดีที่สุด CAC เบื้องต้น และควร scale / pivot / ปรับ offer หรือไม่</p></div>', unsafe_allow_html=True)
+    with d7: st.markdown('<div class="date-card pastel-mint"><span class="pill bot">NEXT STEP</span><h4>Scale Decision</h4><p>ขยายเฉพาะชุดที่มี Qualified Lead และมีโอกาสทำ AOV เป็นแพ็กใหญ่ 3–5 ซอง</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_executive_report_tab():
+    render_exec_summary(); render_exec_situation(); render_exec_problem_breakdown(); render_exec_funnel_strategy(); render_exec_measurement(); render_exec_kpi_guardrail(); render_exec_data_clean(); render_exec_creative(); render_exec_roadmap()
+
 def render_planning_tab():
     render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder(); render_lower_funnel()
 
@@ -132,9 +215,10 @@ def render_solution_tab():
 def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Board · Smoking Candy · Modular Workflow</div>', unsafe_allow_html=True)
 def main():
     render_theme(); render_header()
-    tab_plan, tab_problem, tab_solution = st.tabs(['📌 วางแผนงาน', '⚠️ ปัญหาที่เจอ', '🛠️ แนวทางแก้ไข'])
+    tab_plan, tab_problem, tab_solution, tab_exec = st.tabs(['📌 วางแผนงาน', '⚠️ ปัญหาที่เจอ', '🛠️ แนวทางแก้ไข', '📊 รายงานผู้บริหาร'])
     with tab_plan: render_planning_tab()
     with tab_problem: render_problem_tab()
     with tab_solution: render_solution_tab()
+    with tab_exec: render_executive_report_tab()
     render_footer()
 if __name__=='__main__': main()
