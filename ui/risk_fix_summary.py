@@ -31,6 +31,15 @@ def render_risk_fix_summary():
                     รับ Offer และมี Intent ซื้อจริงได้ชัดขึ้น
                 </p>
             </div>
+            <div class="risk-fix-card data-card">
+                <span class="risk-fix-kicker">DATA ASSET</span>
+                <h4>ใช้ Pixel/Event เป็นฐานกลางของหลายบัญชี</h4>
+                <p>
+                    เพราะบริษัทมีหลายบัญชีสำหรับยิงแอด การวาง <b>Pixel Event</b> ให้เป็นระบบกลางจะช่วยให้ทุกครั้งที่เปลี่ยนบัญชีหรือย้ายบัญชีมายิง
+                    ยังสามารถผูกกับ Event เดิมเพื่อดึงฐานข้อมูลพฤติกรรมและฐานลูกค้าเดิมกลับมาใช้เป็น Signal ได้ต่อเนื่อง
+                    ไม่ต้องเริ่มสะสมข้อมูลใหม่จากศูนย์ทุกครั้ง
+                </p>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
