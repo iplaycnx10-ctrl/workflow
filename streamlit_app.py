@@ -83,50 +83,54 @@ def render_lower_funnel():
     with c2: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">BOT FUNNEL</span><h4>Close / Offer</h4><p>Retarget คนที่เข้า Line OA / ทัก / สนใจสูง ด้วย Offer, Bundle, Review Screenshot และ CTA ซื้อ</p></div>', unsafe_allow_html=True)
     close_module()
 
-def render_initial_fix_guideline():
-    open_module('01_INITIAL_FIX_SUMMARY','แนวทางแก้ไขเบื้องต้นสำหรับเคสยอดตกหลังใช้ระบบเดิม')
-    a,b,c=st.columns(3)
-    with a: st.markdown('<div class="mini-card pastel-rose"><span class="pill rose">PROBLEM</span><h4>ยอดตก / งบไหลไม่คุ้ม</h4><p>เคสเดิมมีความเสี่ยงจากการปล่อยระบบหาคนกว้างเกินไป ทั้งที่สินค้าเป็นสินค้าต้องอธิบายและต้องคัด Intent ก่อนซื้อ</p></div>', unsafe_allow_html=True)
-    with b: st.markdown('<div class="mini-card pastel-amber"><span class="pill amber">CAUSE</span><h4>Pixel / Event ไม่พร้อม</h4><p>ถ้า Purchase Event ไม่แม่น หรือไม่มี Event ที่ไว้ใจได้ ไม่ควรให้ระบบ Optimize แบบกว้างเต็มที่ เพราะ AI จะเรียนรู้จากสัญญาณที่มั่ว</p></div>', unsafe_allow_html=True)
-    with c: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">FIX</span><h4>กลับมายิงมือ + คุม Funnel</h4><p>เริ่มจากคุม Persona, Creative, Retarget และ Offer ด้วยมือก่อน เพื่อสร้างสัญญาณคุณภาพ แล้วค่อยขยายเมื่อเห็นตัวชนะ</p></div>', unsafe_allow_html=True)
+def render_problem_summary():
+    open_module('01_CURRENT_PROBLEM_SECTION','สรุปปัญหาที่เจอตอนนี้จากเคส Smoking Candy')
+    c1,c2,c3=st.columns(3)
+    with c1: st.markdown('<div class="mini-card pastel-rose"><span class="pill rose">ปัญหา 01</span><h4>ยอดตกหลังใช้ระบบเดิม</h4><p>มีสัญญาณว่ายอดขายเริ่มตกหลังเปลี่ยนมาใช้ระบบ/โครงแคมเปญเดิมที่ปล่อยให้ระบบหา Conversion เองมากเกินไป</p></div>', unsafe_allow_html=True)
+    with c2: st.markdown('<div class="mini-card pastel-amber"><span class="pill amber">ปัญหา 02</span><h4>งบ 12,000 ขายได้ 9,000</h4><p>ตัวเลขสะท้อนว่าแคมเปญไม่คุ้มทุนในรอบนี้ และต้องหยุดมองแค่ยอดขายปลายทาง แต่ต้องไล่กลับมาดูคุณภาพ Traffic และ Intent</p></div>', unsafe_allow_html=True)
+    with c3: st.markdown('<div class="mini-card pastel-lav"><span class="pill mid">ปัญหา 03</span><h4>สินค้าไม่ได้ปิดง่ายเหมือนเดิม</h4><p>ตลาดเห็นสินค้ามานานหลายปี ลูกค้าเริ่มชิน โฆษณาเดิมจึงดึง Demand ได้ยากขึ้น ต้องใช้มุม Creative ที่ใหม่และคัดคนมากกว่าเดิม</p></div>', unsafe_allow_html=True)
+    d1,d2,d3=st.columns(3)
+    with d1: st.markdown('<div class="mini-card pastel-sky"><span class="pill top">ปัญหา 04</span><h4>Pixel / Event ไม่พร้อม</h4><p>ระบบ Tracking ยังไม่น่าไว้ใจ หรือไม่มี Event สำคัญมากพอ ทำให้การ Optimize แบบอัตโนมัติอาจเรียนรู้จากสัญญาณที่ผิด</p></div>', unsafe_allow_html=True)
+    with d2: st.markdown('<div class="mini-card pastel-pink"><span class="pill pink">ปัญหา 05</span><h4>Advantage+ อาจกว้างเกิน</h4><p>สินค้านี้ต้องอาศัย Pain, Trust และการคุยต่อ ถ้าปล่อยกว้างเกินอาจได้คนสนใจผิวเผิน แต่ไม่ใช่คนที่พร้อมจ่ายจริง</p></div>', unsafe_allow_html=True)
+    with d3: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">ปัญหา 06</span><h4>ราคาต้องคัดกรองลูกค้า</h4><p>แพ็ก 3 ซอง 1,000 ไม่ใช่สินค้าราคาถูก จึงต้องสื่อราคาและคุณค่าให้ชัด เพื่อกันคนไม่มีงบออกก่อนและดึงคนที่จริงจังเข้ามา</p></div>', unsafe_allow_html=True)
     close_module()
 
-def render_manual_ads_fix():
-    open_module('02_MANUAL_ADS_FIX','แก้เกมโฆษณา: ลดการพึ่ง Advantage+ และกลับมาคุมกลุ่มเอง')
+def render_root_cause_summary():
+    open_module('02_ROOT_CAUSE_SECTION','สาเหตุหลักที่เราประเมินจากปัญหา')
     c1,c2,c3,c4=st.columns(4)
-    fixes=[('STEP 01','หยุดปล่อยกว้างเกิน','พักแคมเปญที่กินงบแต่ไม่สร้างยอด หรือไม่มีสัญญาณคุณภาพ เช่น Inbox/Line OA/ซื้อจริง','rose','pastel-rose'),('STEP 02','แยก Cold / Warm','Cold ใช้ Traffic CI เพื่อหา Interest ส่วน Warm ใช้ Retarget คนที่เคย Engage, View, Inbox, Click','top','pastel-blue'),('STEP 03','ใช้ Creative คัดคน','ภาพ/วิดีโอต้องบอกปัญหาชัด ราคา/แพ็กต้องชัด เพื่อกันคนไม่พร้อมซื้อออกตั้งแต่ต้น','pink','pastel-pink'),('STEP 04','อ่านผล 1–3 วัน','ดู CTR, CPC, Engage, Comment intent, Inbox/Line OA Add แล้วโยกงบไปตัวที่มี Intent จริง','bot','pastel-mint')]
-    for col,x in zip([c1,c2,c3,c4],fixes):
+    causes=[('CAUSE 01','ระบบกว้างก่อนกลุ่มพร้อม','ปล่อยให้ระบบหาคนเองทั้งที่ข้อมูลเรียนรู้ยังไม่พร้อม ทำให้คุณภาพ Traffic แกว่ง','rose','pastel-rose'),('CAUSE 02','Creative ไม่ได้คัด Intent พอ','Hook/ภาพอาจทำให้คนหยุดดูได้ แต่ยังไม่พอให้รู้ว่าใครมีปัญหาจริงและพร้อมซื้อ','amber','pastel-amber'),('CAUSE 03','Funnel ยังไม่แยก Cold/Warm ชัด','คนใหม่ คนเคยเห็น คนเคยทัก และคนพร้อมซื้อไม่ควรถูกสื่อสารด้วยข้อความเดียวกัน','top','pastel-blue'),('CAUSE 04','Offer ยังไม่ช่วยกรองมากพอ','ถ้าไม่บอกราคา แพ็ก และเหตุผลความคุ้มตั้งแต่ต้น จะได้ Lead ที่คุยเยอะแต่ปิดยาก','bot','pastel-mint')]
+    for col,x in zip([c1,c2,c3,c4],causes):
         with col: st.markdown(f'<div class="card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>', unsafe_allow_html=True)
     close_module()
 
-def render_offer_filter_fix():
-    open_module('03_OFFER_AND_CUSTOMER_FILTER','แก้เกมหน้าขาย: ใช้ราคาและแพ็กช่วยคัดลูกค้าที่มีเงินจริง')
-    p1,p2,p3=st.columns(3)
-    with p1: st.markdown('<div class="budget-card pastel-pink"><span class="pill pink">OFFER</span><h4>3 ซอง 1,000 ส่งฟรี</h4><div class="budget-number">1,000฿</div><p>ใช้เป็นแพ็กหลักสำหรับคัดคนที่อยากเริ่มลดจริง ไม่เน้นดึงคนถูกอย่างเดียว</p></div>', unsafe_allow_html=True)
-    with p2: st.markdown('<div class="budget-card pastel-lav"><span class="pill mid">MESSAGE</span><h4>ไม่ขายว่าเลิกทันที</h4><p>เปลี่ยนเป็น “เริ่มลดแบบค่อยเป็นค่อยไป” เพื่อไม่ Overclaim และลดแรงต้านจากลูกค้าที่ไม่เชื่อ</p></div>', unsafe_allow_html=True)
-    with p3: st.markdown('<div class="budget-card pastel-mint"><span class="pill bot">CTA</span><h4>ทัก Line OA / รับโปร</h4><p>ใช้ CTA ที่พาคนไปคุยต่อ เพราะสินค้านี้ต้องมีการตอบคำถามก่อนปิด ไม่ควรหวังปิดจากแอดทันทีทุกคน</p></div>', unsafe_allow_html=True)
+def render_fix_direction_summary():
+    open_module('03_FIX_DIRECTION_SECTION','แนวทางของเราในการแก้ไขเบื้องต้น')
+    a,b,c=st.columns(3)
+    with a: st.markdown('<div class="ci-card pastel-blue"><span class="pill top">แนวทาง 01</span><h3>กลับมายิงมือก่อน</h3><p>ลดการพึ่ง Advantage+ ในช่วงที่ Pixel/Event ยังไม่พร้อม แล้วกลับมาคุมโครงสร้าง Campaign ด้วยมือ</p><div class="ci-meta"><div><b>Cold</b><br>ใช้ Traffic CI หา Persona และ Interest</div><div><b>Warm</b><br>ใช้ Retarget คนดู/คลิก/Engage/Inbox</div><div><b>Budget</b><br>แบ่งงบเทสเล็กก่อนโยกงบ</div><div><b>Goal</b><br>หา Signal คุณภาพก่อน Scale</div></div></div>', unsafe_allow_html=True)
+    with b: st.markdown('<div class="ci-card pastel-pink"><span class="pill pink">แนวทาง 02</span><h3>ใช้ Creative คัดคน</h3><p>Creative ต้องไม่ใช่แค่สวย แต่ต้องบอกปัญหา กลุ่มเป้าหมาย ราคา และเหตุผลให้คนที่ไม่ใช่ออกไปตั้งแต่ต้น</p><div class="ci-meta"><div><b>Persona</b><br>คู่รัก / คนในบ้าน / ผู้ดูแลผู้สูงอายุ</div><div><b>Hook</b><br>กลิ่นบุหรี่กระทบคนรอบตัว</div><div><b>Message</b><br>เริ่มลด ไม่ขายว่าเลิกทันที</div><div><b>CTA</b><br>ทัก Line OA / รับโปร</div></div></div>', unsafe_allow_html=True)
+    with c: st.markdown('<div class="ci-card pastel-mint"><span class="pill bot">แนวทาง 03</span><h3>ทำ Retarget เป็นระบบ</h3><p>ใช้ Traffic CI ปั้น Warm Pool แล้วค่อยส่ง MID/BOT เพื่อปิดการขาย ไม่หวังให้ Cold ปิดทันทีทุกคน</p><div class="ci-meta"><div><b>Pool</b><br>Video View / Engage / Click</div><div><b>MID</b><br>FAQ / Review / คนรอบตัว</div><div><b>BOT</b><br>Offer / Bundle / Screenshot Review</div><div><b>Filter</b><br>3 ซอง 1,000 ส่งฟรี</div></div></div>', unsafe_allow_html=True)
     close_module()
 
-def render_tracking_fix():
-    open_module('04_TRACKING_AND_DECISION_RULE','แก้เกมระบบวัดผล: อย่าให้ ROAS หลอกถ้า Tracking ยังไม่พร้อม')
-    k1,k2=st.columns(2)
-    with k1: st.markdown('<div class="insight-card pastel-amber"><span class="pill amber">TRACKING RISK</span><h4>ถ้า Pixel/Event ยังไม่ชัวร์ ให้ใช้สัญญาณกลางทางก่อน</h4><p>ประเมินจาก CTR, CPC, Video View, Engage, Save, Share, Comment Intent, Inbox, Line OA Add และคุณภาพบทสนทนา แทนการดู ROAS อย่างเดียว</p></div>', unsafe_allow_html=True)
-    with k2: st.markdown('<div class="insight-card pastel-sky"><span class="pill top">DECISION RULE</span><h4>ตัดสินใจจาก Intent ไม่ใช่แค่ยอดซื้อวันแรก</h4><p>ตัวไหนมีคลิกถูกแต่ไม่มี Intent ให้ลดงบ ตัวไหนคลิกแพงกว่าแต่มี Inbox/Line OA/Comment คุณภาพ ให้ถือเป็นตัวที่ควรเทสต่อ</p></div>', unsafe_allow_html=True)
-    r1,r2,r3=st.columns(3)
-    with r1: st.markdown('<div class="placeholder pastel-rose"><span class="pill rose">KILL</span><h4>ควรหยุด</h4><p>ใช้เงินแล้วไม่มี Engage คุณภาพ ไม่มี Inbox ไม่มี Comment intent และ CPC/CPM แพงผิดปกติ</p></div>', unsafe_allow_html=True)
-    with r2: st.markdown('<div class="placeholder pastel-amber"><span class="pill amber">HOLD</span><h4>ควรรอดู</h4><p>เริ่มมี View/Engage แต่ยังไม่พอให้ตัดสินใจ ให้รอครบช่วง Day 1–3 หรือปรับ Hook/Visual ก่อน</p></div>', unsafe_allow_html=True)
-    with r3: st.markdown('<div class="placeholder pastel-mint"><span class="pill bot">SCALE</span><h4>ควรเพิ่มงบ</h4><p>มี Intent จริง เช่น Inbox, Line OA Add, Comment ถามราคา/วิธีใช้ หรือกลุ่ม Warm เริ่มตอบสนองต่อ Retarget</p></div>', unsafe_allow_html=True)
+def render_action_plan_summary():
+    open_module('04_ACTION_PLAN_SECTION','สิ่งที่ต้องทำต่อทันที')
+    s1,s2,s3,s4=st.columns(4)
+    actions=[('ACTION 01','พักตัวที่เผางบ','หยุด/ลดงบชุดที่ Spend สูงแต่ไม่มี Inbox, Line OA Add, Comment Intent หรือยอดขายจริง','rose','pastel-rose'),('ACTION 02','เปิด Manual Test','เปิด Traffic CI 2 Persona พร้อม Retarget กลุ่มเก่า ตั้งแต่วันแรก แล้ว monitor 1–3 วัน','top','pastel-blue'),('ACTION 03','ทำ CI แบบคัดลูกค้า','ใส่ Pain + ราคา + ส่งฟรี + CTA ชัด เช่น แพ็ก 3 ซอง 1,000 เพื่อกรองลูกค้าที่ไม่พร้อมซื้อ','pink','pastel-pink'),('ACTION 04','อ่านผลจาก Intent','ตัดสินใจจาก CTR, CPC, Engage, Comment, Inbox, Line OA Add และคุณภาพบทสนทนา ไม่ดู ROAS อย่างเดียว','bot','pastel-mint')]
+    for col,x in zip([s1,s2,s3,s4],actions):
+        with col: st.markdown(f'<div class="card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>', unsafe_allow_html=True)
+    st.markdown('<div class="insight-card pastel-amber"><span class="pill amber">สรุปแนวคิดหลัก</span><h4>ตอนนี้ไม่ใช่แค่เปลี่ยนแอด แต่ต้องเปลี่ยนวิธีคัดคน</h4><p>ปัญหาหลักคือระบบเดิมอาจหา Traffic ได้ แต่ไม่ได้การันตีว่าคนเหล่านั้นมี Intent และกำลังซื้อจริง แนวทางแก้คือกลับมาคุม Persona, Creative, Offer, Retarget และการอ่านผลด้วยมือก่อน เมื่อเจอตัวที่ชนะค่อย Scale</p></div>', unsafe_allow_html=True)
     close_module()
 
 def render_planning_tab():
     render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder(); render_lower_funnel()
 
-def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Board · Smoking Candy · Planning + Initial Fix</div>', unsafe_allow_html=True)
+def render_fix_tab():
+    render_problem_summary(); render_root_cause_summary(); render_fix_direction_summary(); render_action_plan_summary()
+
+def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Board · Smoking Candy · Planning + Problem/Fix Summary</div>', unsafe_allow_html=True)
 def main():
     render_theme(); render_header()
     tab_plan, tab_fix = st.tabs(['📌 วางแผนงาน', '🛠️ แนวทางแก้ไขเบื้องต้น'])
     with tab_plan: render_planning_tab()
-    with tab_fix:
-        render_initial_fix_guideline(); render_manual_ads_fix(); render_offer_filter_fix(); render_tracking_fix()
+    with tab_fix: render_fix_tab()
     render_footer()
 if __name__=='__main__': main()
