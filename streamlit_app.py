@@ -39,15 +39,15 @@ def render_theme():
         .module-head { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom: 16px; }
         .module-title { font-size: 14px; font-weight: 850; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
         .module-desc { color: var(--muted); font-size: 13px; line-height:1.55; margin: 4px 0 0; }
-        .hero, .card, .mini-card, .persona-card, .test-card, .insight-card, .ci-card, .traffic-card, .pipe-card { background: rgba(255,255,255,0.9); border: 1px solid var(--line); box-shadow: 0 12px 36px rgba(31,41,55,0.045); }
+        .hero, .card, .mini-card, .persona-card, .test-card, .insight-card, .ci-card, .traffic-card, .pipe-card, .flow-node, .merge-node { background: rgba(255,255,255,0.9); border: 1px solid var(--line); box-shadow: 0 12px 36px rgba(31,41,55,0.045); }
         .hero { border-radius: 28px; padding: 28px 30px; margin-bottom: 20px; }
         .eyebrow { display: inline-flex; padding: 7px 12px; border-radius: 999px; background: #f8fafc; border: 1px solid var(--line); color: var(--muted); font-size: 13px; margin-bottom: 12px; }
         .title { font-size: 38px; font-weight: 850; letter-spacing: -0.04em; margin: 0; color: var(--ink); }
         .subtitle { color: var(--muted); font-size: 16px; margin-top: 8px; line-height: 1.7; }
         .flow-line { height: 3px; border-radius: 99px; background: linear-gradient(90deg, #bfdbfe, #ddd6fe, #bbf7d0); margin: 12px 0 20px 0; }
         .card { border-radius: 24px; padding: 22px; min-height: 270px; height: auto; overflow: visible; }
-        .card h3, .mini-card h4, .persona-card h3, .test-card h4, .insight-card h4, .ci-card h3, .traffic-card h4, .pipe-card h4 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
-        .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p, .insight-card p, .ci-card p, .ci-card li, .traffic-card p, .traffic-card li, .pipe-card p, .pipe-card li { color: var(--muted); line-height: 1.62; font-size: 14px; }
+        .card h3, .mini-card h4, .persona-card h3, .test-card h4, .insight-card h4, .ci-card h3, .traffic-card h4, .pipe-card h4, .flow-node h4, .merge-node h4 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
+        .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p, .insight-card p, .ci-card p, .ci-card li, .traffic-card p, .traffic-card li, .pipe-card p, .pipe-card li, .flow-node p, .merge-node p, .flow-node li, .merge-node li { color: var(--muted); line-height: 1.62; font-size: 14px; }
         .pill { display: inline-block; padding: 7px 11px; border-radius: 999px; font-size: 12px; font-weight: 750; margin-bottom: 12px; }
         .top { background: var(--blue); color: var(--blue-text); }
         .mid { background: var(--lavender); color: var(--lavender-text); }
@@ -55,7 +55,7 @@ def render_theme():
         .pink { background: var(--pink); color: var(--pink-text); }
         .amber { background: var(--amber); color: var(--amber-text); }
         .arrow-row { display: flex; align-items: center; justify-content: center; min-height: 270px; margin: 0; color: #c4c9d4; font-size: 30px; font-weight: 800; }
-        .mini-card, .persona-card, .test-card, .insight-card, .ci-card, .traffic-card, .pipe-card { border-radius: 20px; padding: 18px; }
+        .mini-card, .persona-card, .test-card, .insight-card, .ci-card, .traffic-card, .pipe-card, .flow-node, .merge-node { border-radius: 20px; padding: 18px; }
         .persona-card, .unknown-card { min-height: 405px; height: auto; overflow: visible; }
         .placeholder { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.65); border-radius: 20px; padding: 18px; min-height: 190px; height: auto; overflow: visible; }
         .mini-card { min-height: 175px; height: auto; overflow: visible; }
@@ -66,8 +66,12 @@ def render_theme():
         .pipe-card { min-height: 210px; background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,250,252,0.88)); }
         .ci-meta { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
         .ci-meta div { background:#f8fafc; border:1px solid var(--line); border-radius:14px; padding:10px; color:var(--muted); font-size:13px; line-height:1.45; }
-        .pipe-line { height: 4px; border-radius: 99px; background: linear-gradient(90deg, #fbcfe8, #bfdbfe, #ddd6fe); margin: 18px 0; position: relative; }
-        .pipe-line:after { content:'→'; position:absolute; right:-2px; top:-18px; font-size: 26px; color:#94a3b8; font-weight:900; }
+        .visual-flow { margin-top: 18px; padding: 22px; border-radius: 26px; background: rgba(255,255,255,0.66); border: 1px solid var(--line); }
+        .flow-node { min-height: 170px; }
+        .merge-node { min-height: 190px; background: linear-gradient(180deg, #ffffff, #f8fafc); }
+        .pipe-down { height: 34px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:30px; font-weight:900; }
+        .pipe-h { height: 4px; border-radius: 999px; background: linear-gradient(90deg, #fbcfe8, #bfdbfe); margin: 15px 0; }
+        .pipe-v { width: 4px; height: 34px; border-radius: 999px; background:#cbd5e1; margin: 0 auto; }
         .pipe-arrow { display:flex; align-items:center; justify-content:center; color:#c4c9d4; font-size:30px; font-weight:900; min-height:210px; }
         .person-icon { font-size: 42px; margin-bottom: 8px; }
         .unknown-card { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.72); border-radius: 20px; padding: 18px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; box-shadow: 0 12px 36px rgba(31,41,55,0.025); }
@@ -138,20 +142,29 @@ def render_persona_creative():
 
 
 def render_traffic_to_retarget_pipe():
-    open_module("03_TRAFFIC_CI_TO_RETARGET_PIPE_MODULE", "ท่อต่อจาก TOP Insight: Traffic CI 2 ตัวจะสร้าง Retarget Pool เพื่อส่งเข้า MID Retarget")
-    c1, a1, c2, a2, c3 = st.columns([1.05, .12, 1.05, .12, 1.05])
-    with c1:
-        st.markdown("""<div class="traffic-card"><span class="pill pink">TRAFFIC CI 01</span><h4>คู่รัก / แฟนไม่โอเคกับกลิ่น</h4><p><b>Objective:</b> Traffic / Engagement เพื่อหา signal</p><ul><li>ดูวิดีโอ</li><li>คลิก / Engage</li><li>Comment / Share / Save</li></ul></div>""", unsafe_allow_html=True)
-    with a1:
-        st.markdown('<div class="pipe-arrow">→</div>', unsafe_allow_html=True)
-    with c2:
-        st.markdown("""<div class="traffic-card"><span class="pill mid">TRAFFIC CI 02</span><h4>ดูแลผู้สูงอายุ / คนในบ้านเป็นห่วง</h4><p><b>Objective:</b> Traffic / Engagement เพื่อหา audience ที่อินกับมุมครอบครัว</p><ul><li>ดูวิดีโอ</li><li>คลิก / Engage</li><li>Comment เรื่องคนในบ้าน</li></ul></div>""", unsafe_allow_html=True)
-    with a2:
-        st.markdown('<div class="pipe-arrow">→</div>', unsafe_allow_html=True)
-    with c3:
-        st.markdown("""<div class="pipe-card"><span class="pill amber">RETARGET POOL</span><h4>กลุ่มที่ต้องยิงต่อ</h4><p><b>Retarget แบบที่ใช้:</b> Warm Engagement + Traffic Intent</p><ul><li>Video View / Engaged 7–14 วัน</li><li>Click / LPV / Profile Engage 7–14 วัน</li><li>Comment / Save / Share / Inbox 14–30 วัน</li></ul></div>""", unsafe_allow_html=True)
-    st.markdown('<div class="pipe-line"></div>', unsafe_allow_html=True)
-    st.markdown("""<div class="insight-card"><span class="pill bot">PIPE NOTE</span><h4>Logic ของท่อนี้</h4><p>TOP ไม่ได้หวังปิดทันที แต่ใช้ Traffic CI สองตัวเพื่อแยกว่าคนอินกับ Pain แบบไหน จากนั้นสร้าง Retarget Pool ส่งเข้า MID CI: สอบถามแฟน / รีวิวคนในบ้าน / ดึงเข้า Line OA</p></div>""", unsafe_allow_html=True)
+    open_module("03_TRAFFIC_CI_TO_RETARGET_PIPE_MODULE", "ภาพท่อ: Traffic CI 2 ตัวไหลรวมเข้า Retarget Pool แล้วส่งเข้า MID Retarget")
+    st.markdown('<div class="visual-flow">', unsafe_allow_html=True)
+    top1, gap, top2 = st.columns([1, .16, 1])
+    with top1:
+        st.markdown("""<div class="flow-node"><span class="pill pink">TRAFFIC CI 01</span><h4>คู่รัก / แฟนไม่โอเคกับกลิ่น</h4><p>สร้างสัญญาณจากคนที่อินกับ Pain ความสัมพันธ์</p><ul><li>Video View</li><li>Click / Engage</li><li>Comment / Share / Save</li></ul></div>""", unsafe_allow_html=True)
+        st.markdown('<div class="pipe-v"></div><div class="pipe-down">↓</div>', unsafe_allow_html=True)
+    with gap:
+        st.markdown("", unsafe_allow_html=True)
+    with top2:
+        st.markdown("""<div class="flow-node"><span class="pill mid">TRAFFIC CI 02</span><h4>ดูแลผู้สูงอายุ / คนในบ้านเป็นห่วง</h4><p>สร้างสัญญาณจากคนที่อินกับ Pain ครอบครัว</p><ul><li>Video View</li><li>Click / Engage</li><li>Comment เรื่องคนในบ้าน</li></ul></div>""", unsafe_allow_html=True)
+        st.markdown('<div class="pipe-v"></div><div class="pipe-down">↓</div>', unsafe_allow_html=True)
+
+    left, center, right = st.columns([1, .56, 1])
+    with left:
+        st.markdown('<div class="pipe-h"></div>', unsafe_allow_html=True)
+    with center:
+        st.markdown("""<div class="merge-node"><span class="pill amber">RETARGET POOL</span><h4>Warm Engagement + Traffic Intent</h4><p>รวมคนจาก CI ทั้งสองตัวที่มีสัญญาณสนใจ</p><ul><li>Video View / Engaged 7–14 วัน</li><li>Click / LPV / Profile Engage 7–14 วัน</li><li>Comment / Save / Share / Inbox 14–30 วัน</li></ul></div>""", unsafe_allow_html=True)
+    with right:
+        st.markdown('<div class="pipe-h"></div>', unsafe_allow_html=True)
+
+    st.markdown('<div class="pipe-v"></div><div class="pipe-down">↓</div>', unsafe_allow_html=True)
+    st.markdown("""<div class="merge-node"><span class="pill bot">MID RETARGET</span><h4>ส่งต่อเข้า CI กลางน้ำ</h4><p>ใช้ Retarget Pool ไปยิง MID CI: สอบถามแฟน / รีวิวจากแฟนหรือคนในบ้าน / ดึงเข้า Line OA</p></div>""", unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
     close_module()
 
 
@@ -196,7 +209,7 @@ def render_lower_funnel():
 
 
 def render_footer():
-    st.markdown('<div class="footer-note">Traffic CI → Retarget Pool → MID Retarget · Modular-safe</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer-note">Visual Pipe: Traffic CI 01 + CI 02 → Retarget Pool → MID Retarget</div>', unsafe_allow_html=True)
 
 
 def main():
