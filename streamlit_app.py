@@ -43,36 +43,30 @@ def render_theme():
         }
         [data-testid="stSidebar"] { display: none; }
         .main .block-container { padding-top: 2.2rem; max-width: 1280px; }
-        .hero {
-            background: rgba(255,255,255,0.86);
+        .hero, .card, .mini-card, .persona-card, .test-card {
+            background: rgba(255,255,255,0.9);
             border: 1px solid var(--line);
-            border-radius: 28px;
-            padding: 28px 30px;
-            box-shadow: 0 18px 50px rgba(31,41,55,0.06);
-            margin-bottom: 20px;
+            box-shadow: 0 12px 36px rgba(31,41,55,0.045);
         }
-        .eyebrow {
-            display: inline-flex; padding: 7px 12px; border-radius: 999px;
-            background: #f8fafc; border: 1px solid var(--line); color: var(--muted);
-            font-size: 13px; margin-bottom: 12px;
-        }
+        .hero { border-radius: 28px; padding: 28px 30px; margin-bottom: 20px; }
+        .eyebrow { display: inline-flex; padding: 7px 12px; border-radius: 999px; background: #f8fafc; border: 1px solid var(--line); color: var(--muted); font-size: 13px; margin-bottom: 12px; }
         .title { font-size: 38px; font-weight: 850; letter-spacing: -0.04em; margin: 0; color: var(--ink); }
         .subtitle { color: var(--muted); font-size: 16px; margin-top: 8px; line-height: 1.7; }
         .module-title { font-size: 14px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 24px 0 12px 0; }
         .flow-line { height: 3px; border-radius: 99px; background: linear-gradient(90deg, #bfdbfe, #ddd6fe, #bbf7d0); margin: 12px 0 20px 0; }
-        .card { background: rgba(255,255,255,0.9); border: 1px solid var(--line); border-radius: 24px; padding: 22px; min-height: 235px; box-shadow: 0 12px 36px rgba(31,41,55,0.045); }
-        .card h3 { margin: 0 0 8px 0; font-size: 23px; letter-spacing: -0.02em; }
-        .card p, .card li { color: var(--muted); line-height: 1.62; font-size: 14px; }
+        .card { border-radius: 24px; padding: 22px; min-height: 210px; }
+        .card h3, .mini-card h4, .persona-card h3, .test-card h4 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
+        .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p { color: var(--muted); line-height: 1.62; font-size: 14px; }
         .pill { display: inline-block; padding: 7px 11px; border-radius: 999px; font-size: 12px; font-weight: 750; margin-bottom: 12px; }
         .top { background: var(--blue); color: var(--blue-text); }
         .mid { background: var(--lavender); color: var(--lavender-text); }
         .bot { background: var(--mint); color: var(--mint-text); }
         .pink { background: var(--pink); color: var(--pink-text); }
         .amber { background: var(--amber); color: var(--amber-text); }
-        .arrow-row { display: flex; align-items: center; justify-content: center; margin: 14px 0 2px 0; color: #c4c9d4; font-size: 28px; font-weight: 800; }
-        .mini-card { background: rgba(255,255,255,0.92); border: 1px solid var(--line); border-radius: 20px; padding: 18px; box-shadow: 0 10px 28px rgba(31,41,55,0.04); min-height: 138px; }
-        .mini-card h4 { margin: 0 0 8px 0; font-size: 16px; }
-        .mini-card p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+        .arrow-row { display: flex; align-items: center; justify-content: center; margin: 28px 0 2px 0; color: #c4c9d4; font-size: 30px; font-weight: 800; }
+        .mini-card, .persona-card, .test-card { border-radius: 20px; padding: 18px; min-height: 138px; }
+        .person-icon { font-size: 42px; margin-bottom: 8px; }
+        .placeholder { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.65); border-radius: 20px; padding: 18px; min-height: 138px; }
         .footer-note { color: var(--muted); text-align: center; padding: 20px 0 6px; font-size: 13px; }
         </style>
         """,
@@ -88,10 +82,10 @@ def render_header():
         """
         <div class="hero">
             <div class="eyebrow">🍬 Project Board · White Pastel Minimal · Modular</div>
-            <h1 class="title">ลูกอมบุหรี่ — Ads Workflow Report</h1>
+            <h1 class="title">ลูกอมบุหรี่ — TOP Funnel CI Workflow</h1>
             <div class="subtitle">
-                บอร์ดหน้าเดียวสำหรับวางระบบยิงแอดแบบ Funnel: TOP → MID → BOT<br>
-                ใช้ดูภาพรวมว่าแต่ละชั้นของแคมเปญทำหน้าที่อะไร ต้องใช้ Creative แบบไหน และวัดผลด้วยอะไร
+                โฟกัสงานแรกคือ CI ของ TOP Funnel: แยก Persona → ทำ Creative → Test → Scale<br>
+                MID/BOT จะถูกย้ายลงล่างเป็นขั้นต่อไปหลังจาก TOP CI เริ่มเห็นสัญญาณ
             </div>
         </div>
         """,
@@ -100,59 +94,74 @@ def render_header():
 
 
 # =========================================================
-# 03_FUNNEL_WORKFLOW_MODULE
+# 03_TOP_CI_WORKFLOW_MODULE
 # =========================================================
-def render_funnel_workflow():
-    st.markdown('<div class="module-title">01_FUNNEL_WORKFLOW_MODULE</div>', unsafe_allow_html=True)
+def render_top_ci_workflow():
+    st.markdown('<div class="module-title">01_TOP_FUNNEL_CI_FIRST_WORKFLOW_MODULE</div>', unsafe_allow_html=True)
     st.markdown('<div class="flow-line"></div>', unsafe_allow_html=True)
 
-    col1, col_arrow1, col2, col_arrow2, col3 = st.columns([1.15, 0.14, 1.15, 0.14, 1.15])
-
-    with col1:
-        st.markdown("""<div class="card"><span class="pill top">TOP FUNNEL · Awareness</span><h3>เปิด Pain ให้คนหยุดดู</h3><p><b>หน้าที่:</b> ดึงคนที่มีปัญหากลิ่นบุหรี่ / อยากลดบุหรี่ / คนรอบตัวเริ่มไม่โอเค</p><ul><li>Hook แรงใน 1–3 วิ</li><li>POV สถานการณ์จริง</li><li>ปั้นกลุ่ม Video View / Engage / Click</li></ul></div>""", unsafe_allow_html=True)
-    with col_arrow1:
-        st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
-    with col2:
-        st.markdown("""<div class="card"><span class="pill mid">MID FUNNEL · Trust</span><h3>ทำให้เข้าใจและเชื่อ</h3><p><b>หน้าที่:</b> อธิบายว่าสินค้าช่วยอะไร เหมาะกับใคร และลดความลังเลก่อนซื้อ</p><ul><li>Explainer / FAQ / Review</li><li>Pain → Solution → Reason</li><li>ส่งคนสนใจเข้า BOT</li></ul></div>""", unsafe_allow_html=True)
-    with col_arrow2:
-        st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
-    with col3:
-        st.markdown("""<div class="card"><span class="pill bot">BOT FUNNEL · Conversion</span><h3>ปิดการขายและดัน AOV</h3><p><b>หน้าที่:</b> Retarget คน Intent สูงด้วย Offer, Bundle, Review และ CTA ชัด</p><ul><li>Offer / Bundle / Social Proof</li><li>Retarget Click / Inbox / ATC</li><li>วัด Purchase, CPA, ROAS, AOV</li></ul></div>""", unsafe_allow_html=True)
-
-
-# =========================================================
-# 04_CREATIVE_DIRECTION_MODULE
-# =========================================================
-def render_creative_direction():
-    st.markdown('<div class="module-title">02_CREATIVE_DIRECTION_MODULE</div>', unsafe_allow_html=True)
-    c1, c2, c3 = st.columns(3)
-
+    c1, a1, c2, a2, c3, a3, c4 = st.columns([1.05, .12, 1.05, .12, 1.05, .12, 1.05])
     with c1:
-        st.markdown("""<div class="mini-card"><span class="pill top">TOP CI</span><h4>Problem / Emotion</h4><p>แฟนเบ้หน้าเพราะกลิ่นบุหรี่, คนสูบไม่รู้ตัวว่ากลิ่นติดตัว, อยากลดแต่ยังปากว่างไม่ได้</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="card"><span class="pill top">STEP 01</span><h3>Persona</h3><p>เลือกกลุ่มคนให้ชัดก่อนทำ CI</p><ul><li>คู่รัก</li><li>คนดูแลผู้สูงอายุ</li></ul></div>""", unsafe_allow_html=True)
+    with a1:
+        st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
     with c2:
-        st.markdown("""<div class="mini-card"><span class="pill mid">MID CI</span><h4>Reason / Proof</h4><p>อธิบายวิธีใช้, รีวิวคนลองลดจำนวนมวน, เปรียบเทียบก่อน-หลัง, FAQ ว่าลูกอมช่วยตรงไหน</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="card"><span class="pill pink">STEP 02</span><h3>CI Angle</h3><p>แตกมุมครีเอทีฟตามบุคลิกกลุ่มคน</p><ul><li>Emotion / Care</li><li>Reaction / Concern</li></ul></div>""", unsafe_allow_html=True)
+    with a2:
+        st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
     with c3:
-        st.markdown("""<div class="mini-card"><span class="pill bot">BOT CI</span><h4>Offer / Close</h4><p>โปรแพ็กคู่, คุ้มกว่าเมื่อซื้อหลายชิ้น, รีวิว Screenshot, CTA ไป Shopee / Inbox / ช่องทางปิดการขาย</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="card"><span class="pill amber">STEP 03</span><h3>Test Zone</h3><p>เว้นพื้นที่ไว้สำหรับเทส</p><ul><li>Hook</li><li>Visual</li><li>Message</li></ul></div>""", unsafe_allow_html=True)
+    with a3:
+        st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
+    with c4:
+        st.markdown("""<div class="card"><span class="pill bot">STEP 04</span><h3>Scale Zone</h3><p>ขยายเฉพาะ CI ที่เริ่มชนะ</p><ul><li>Duplicate angle</li><li>แตก Persona</li><li>เพิ่ม Budget</li></ul></div>""", unsafe_allow_html=True)
 
 
 # =========================================================
-# 05_KPI_AND_RETARGET_MODULE
+# 04_PERSONA_CREATIVE_MODULE
 # =========================================================
-def render_kpi_and_retarget():
-    st.markdown('<div class="module-title">03_KPI_AND_RETARGET_MODULE</div>', unsafe_allow_html=True)
-    k1, k2 = st.columns([1, 1])
+def render_persona_creative():
+    st.markdown('<div class="module-title">02_PERSONA_CREATIVE_MODULE</div>', unsafe_allow_html=True)
+    p1, p2 = st.columns(2)
 
-    with k1:
-        st.markdown("""<div class="mini-card"><span class="pill pink">KPI WATCH</span><h4>ตัวเลขที่ต้องดูตาม Funnel</h4><p><b>TOP:</b> CTR, CPM, 3-sec View, Engagement<br><b>MID:</b> LPV, VC, Inbox, ATC, Comment Intent<br><b>BOT:</b> Purchase, CPA, ROAS, AOV, Close Rate</p></div>""", unsafe_allow_html=True)
-    with k2:
-        st.markdown("""<div class="mini-card"><span class="pill amber">RETARGET FLOW</span><h4>Audience Movement</h4><p>Video View / Engage / Click → LPV / VC / Inbox → ATC / High Intent Inbox / Shopee Click → Purchase / Bundle / Repeat</p></div>""", unsafe_allow_html=True)
+    with p1:
+        st.markdown("""<div class="persona-card"><div class="person-icon">👩‍❤️‍👨</div><span class="pill pink">PERSONA 01 · คู่รัก</span><h3>คนรักเป็นตัวสะกิดให้เริ่มลด</h3><p><b>บทบาทคนรัก:</b> ไม่ด่า ไม่บังคับ แต่แสดง Reaction ว่ากลิ่นบุหรี่ทำให้ความใกล้ชิดหายไป</p><ul><li>แฟนกอดแล้วชะงัก</li><li>ดมเสื้อแล้วถอยออกเบาๆ</li><li>ยื่นลูกอมให้แบบห่วง ไม่ประชด</li></ul></div>""", unsafe_allow_html=True)
+
+    with p2:
+        st.markdown("""<div class="persona-card"><div class="person-icon">🧑‍🦳👩‍🦱</div><span class="pill lav mid">PERSONA 02 · ดูแลผู้สูงอายุ</span><h3>คนในบ้านเป็นแรงห่วงใย</h3><p><b>บทบาทผู้ดูแล:</b> สื่อว่าควัน/กลิ่นบุหรี่กระทบคนแก่ในบ้าน จึงอยากให้เริ่มลดแบบค่อยเป็นค่อยไป</p><ul><li>ลูก/หลานเห็นผู้สูงอายุไอหรือปิดจมูก</li><li>หยิบลูกอมให้พ่อ/แม่/คนในบ้าน</li><li>พูดด้วยโทนเป็นห่วง ไม่ตำหนิ</li></ul></div>""", unsafe_allow_html=True)
 
 
 # =========================================================
-# 06_FOOTER_MODULE
+# 05_TEST_AND_SCALE_PLACEHOLDER_MODULE
+# =========================================================
+def render_test_and_scale_placeholder():
+    st.markdown('<div class="module-title">03_TEST_AND_SCALE_PLACEHOLDER_MODULE</div>', unsafe_allow_html=True)
+    t1, t2, t3 = st.columns(3)
+    with t1:
+        st.markdown("""<div class="placeholder"><span class="pill amber">TEST SLOT A</span><h4>Hook Test</h4><p>เว้นไว้ใส่ Hook ที่ต้องเทส เช่น คู่รัก / ผู้สูงอายุ / กลิ่นติดตัว</p></div>""", unsafe_allow_html=True)
+    with t2:
+        st.markdown("""<div class="placeholder"><span class="pill amber">TEST SLOT B</span><h4>Visual Test</h4><p>เว้นไว้ใส่มุมภาพ: กอดแล้วถอย, ปิดจมูก, ยื่นลูกอม, สีหน้าเป็นห่วง</p></div>""", unsafe_allow_html=True)
+    with t3:
+        st.markdown("""<div class="placeholder"><span class="pill bot">SCALE SLOT</span><h4>Scale Candidate</h4><p>เว้นไว้ใส่ CI ที่ชนะ แล้วแตก Angle / Duplicate / เพิ่มงบ</p></div>""", unsafe_allow_html=True)
+
+
+# =========================================================
+# 06_LOWER_FUNNEL_MODULE
+# =========================================================
+def render_lower_funnel():
+    st.markdown('<div class="module-title">04_LOWER_FUNNEL_MODULE · moved below</div>', unsafe_allow_html=True)
+    m1, m2 = st.columns(2)
+    with m1:
+        st.markdown("""<div class="mini-card"><span class="pill mid">MID FUNNEL</span><h4>Trust / Explain</h4><p>หลัง TOP CI มีคนสนใจ ค่อยใช้ Explainer, FAQ, Review เพื่อทำให้เชื่อและเข้าใจสินค้า</p></div>""", unsafe_allow_html=True)
+    with m2:
+        st.markdown("""<div class="mini-card"><span class="pill bot">BOT FUNNEL</span><h4>Close / Offer</h4><p>Retarget คน Intent สูงด้วย Offer, Bundle, Review Screenshot และ CTA ไป Shopee / Inbox</p></div>""", unsafe_allow_html=True)
+
+
+# =========================================================
+# 07_FOOTER_MODULE
 # =========================================================
 def render_footer():
-    st.markdown('<div class="footer-note">Modular Board v0.1 · Project: ลูกอมบุหรี่ · White Pastel Minimal</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer-note">Modular Board v0.2 · TOP Funnel CI-first · Persona-based Creative</div>', unsafe_allow_html=True)
 
 
 # =========================================================
@@ -161,9 +170,10 @@ def render_footer():
 def main():
     render_theme()
     render_header()
-    render_funnel_workflow()
-    render_creative_direction()
-    render_kpi_and_retarget()
+    render_top_ci_workflow()
+    render_persona_creative()
+    render_test_and_scale_placeholder()
+    render_lower_funnel()
     render_footer()
 
 
