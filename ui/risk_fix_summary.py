@@ -40,6 +40,15 @@ def render_risk_fix_summary():
                     ไม่ต้องเริ่มสะสมข้อมูลใหม่จากศูนย์ทุกครั้ง
                 </p>
             </div>
+            <div class="risk-fix-card sku-card">
+                <span class="risk-fix-kicker">SKU LEARNING</span>
+                <h4>รองรับสินค้าใหม่ / SKU ใหม่ในอนาคต</h4>
+                <p>
+                    ถ้าส่ง Event แยกตาม <b>SKU / Product ID / Category / Value</b> ได้ดี ระบบจะมีสัญญาณว่าสินค้าแบบไหนสัมพันธ์กับลูกค้ากลุ่มไหน
+                    เมื่อเพิ่มสินค้าใหม่ในอนาคต ทีมสามารถนำฐานข้อมูลพฤติกรรมเดิมไปปรับใช้กับ Product ใหม่ได้เร็วขึ้น
+                    และช่วยให้บัญชีเรียนรู้ Product-Market Fit ได้เป็นระบบกว่าเดิม
+                </p>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
