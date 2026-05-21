@@ -1,4 +1,5 @@
 import streamlit as st
+from ui.action_plan_handover import render_handover_benefit_card
 
 
 def render_stability_plan_tab():
@@ -20,3 +21,4 @@ def render_stability_plan_tab():
         """,
         unsafe_allow_html=True,
     )
+    render_handover_benefit_card()
