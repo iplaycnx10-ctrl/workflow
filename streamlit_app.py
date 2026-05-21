@@ -45,7 +45,7 @@ def render_theme():
         .subtitle { color: var(--muted); font-size: 16px; margin-top: 8px; line-height: 1.7; }
         .module-title { font-size: 14px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 24px 0 12px 0; }
         .flow-line { height: 3px; border-radius: 99px; background: linear-gradient(90deg, #bfdbfe, #ddd6fe, #bbf7d0); margin: 12px 0 20px 0; }
-        .card { border-radius: 24px; padding: 22px; min-height: 210px; }
+        .card { border-radius: 24px; padding: 22px; min-height: 250px; height: 250px; overflow: hidden; }
         .card h3, .mini-card h4, .persona-card h3, .test-card h4, .insight-card h4 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
         .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p, .insight-card p { color: var(--muted); line-height: 1.62; font-size: 14px; }
         .pill { display: inline-block; padding: 7px 11px; border-radius: 999px; font-size: 12px; font-weight: 750; margin-bottom: 12px; }
@@ -54,12 +54,15 @@ def render_theme():
         .bot { background: var(--mint); color: var(--mint-text); }
         .pink { background: var(--pink); color: var(--pink-text); }
         .amber { background: var(--amber); color: var(--amber-text); }
-        .arrow-row { display: flex; align-items: center; justify-content: center; margin: 28px 0 2px 0; color: #c4c9d4; font-size: 30px; font-weight: 800; }
-        .mini-card, .persona-card, .test-card, .insight-card { border-radius: 20px; padding: 18px; min-height: 138px; }
+        .arrow-row { display: flex; align-items: center; justify-content: center; height: 250px; margin: 0; color: #c4c9d4; font-size: 30px; font-weight: 800; }
+        .mini-card, .persona-card, .test-card, .insight-card { border-radius: 20px; padding: 18px; }
+        .persona-card, .unknown-card { min-height: 335px; height: 335px; overflow: hidden; }
+        .placeholder { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.65); border-radius: 20px; padding: 18px; min-height: 165px; height: 165px; overflow: hidden; }
+        .mini-card { min-height: 155px; height: 155px; overflow: hidden; }
+        .insight-card { min-height: 130px; }
         .person-icon { font-size: 42px; margin-bottom: 8px; }
-        .unknown-card { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.72); border-radius: 20px; padding: 18px; min-height: 245px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+        .unknown-card { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.72); border-radius: 20px; padding: 18px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; box-shadow: 0 12px 36px rgba(31,41,55,0.025); }
         .unknown-mark { font-size: 58px; font-weight: 900; color:#94a3b8; line-height:1; margin-bottom: 10px; }
-        .placeholder { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.65); border-radius: 20px; padding: 18px; min-height: 138px; }
         .footer-note { color: var(--muted); text-align: center; padding: 20px 0 6px; font-size: 13px; }
         </style>
         """,
