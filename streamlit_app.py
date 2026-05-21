@@ -64,7 +64,7 @@ def render_theme():
         .mini-card { min-height: 175px; height: auto; overflow: visible; }
         .insight-card { min-height: 160px; margin-top: 18px; overflow: visible; }
         .mid-target-card { min-height: 260px; }
-        .ci-card { min-height: 360px; margin-top: 18px; }
+        .ci-card { min-height: 390px; margin-top: 18px; }
         .ci-meta { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
         .ci-meta div { background:#f8fafc; border:1px solid var(--line); border-radius:14px; padding:10px; color:var(--muted); font-size:13px; line-height:1.45; }
         .person-icon { font-size: 42px; margin-bottom: 8px; }
@@ -95,8 +95,8 @@ def render_header():
             <div class="eyebrow">🍬 Project Board · White Pastel Minimal · Modular</div>
             <h1 class="title">ลูกอมบุหรี่ — TOP Funnel CI Workflow</h1>
             <div class="subtitle">
-                โฟกัสงานแรกคือ CI ของ TOP Funnel: แยก Persona → ทำ Creative → Test → Scale<br>
-                MID Target จะใช้รับคนที่เริ่มสนใจจาก CI แล้วค่อยอธิบายเหตุผล สร้างความเชื่อ และคัด Intent ต่อ
+                TOP ใช้สร้าง Pain และ Persona ส่วน MID ใช้ต่อซีรีส์เดิมเพื่อ Retarget คนที่อินแล้ว<br>
+                เป้าหมายคือพาเขาไปสู่บทสนทนา รีวิว และ Line OA ก่อนปิดการขาย
             </div>
         </div>
         """,
@@ -140,7 +140,7 @@ def render_persona_creative():
         st.markdown("""<div class="persona-card"><div class="person-icon">🧑‍🦳👩‍🦱</div><span class="pill mid">PERSONA 02 · ดูแลผู้สูงอายุ</span><h3>คนในบ้านเป็นแรงห่วงใย</h3><p><b>บทบาทผู้ดูแล:</b> สื่อว่าควัน/กลิ่นบุหรี่กระทบคนแก่ในบ้าน จึงอยากให้เริ่มลดแบบค่อยเป็นค่อยไป</p><ul><li>ลูก/หลานเห็นผู้สูงอายุไอหรือปิดจมูก</li><li>หยิบลูกอมให้พ่อ/แม่/คนในบ้าน</li><li>พูดด้วยโทนเป็นห่วง ไม่ตำหนิ</li></ul></div>""", unsafe_allow_html=True)
     with p3:
         st.markdown("""<div class="unknown-card"><div class="unknown-mark">???</div><span class="pill amber">NEXT PERSONA</span><p>เว้นไว้เตรียมขยับเพิ่ม เมื่อผลเทสบอกว่ามีกลุ่มใหม่ที่ตอบสนองกับ CI</p></div>""", unsafe_allow_html=True)
-    st.markdown("""<div class="insight-card"><span class="pill top">INSIGHT</span><h4>ทำ Persona ไว้เพื่อคัด Interest สำหรับกลุ่ม CI</h4><p>จุดนี้ไม่ได้ทำเพื่อสวยอย่างเดียว แต่ใช้เป็นระบบหา “กลุ่มเป้าหมายที่ใช้ได้จริง” จากผลตอบสนองของ Creative เช่น คู่รักตอบสนองกับ Hook แบบแฟนถอยห่าง หรือกลุ่มดูแลผู้สูงอายุตอบสนองกับมุมเป็นห่วงคนในบ้าน จากนั้นค่อยเอา Insight ไปคัด Interest / Audience / Angle สำหรับรอบ Test และ Scale ต่อ</p></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="insight-card"><span class="pill top">INSIGHT</span><h4>ทำ Persona ไว้เพื่อคัด Interest สำหรับกลุ่ม CI</h4><p>จุดนี้ใช้หา “กลุ่มเป้าหมายที่ใช้ได้จริง” จากผลตอบสนองของ Creative เช่น คู่รักตอบสนองกับ Hook แบบแฟนถอยห่าง หรือกลุ่มดูแลผู้สูงอายุตอบสนองกับมุมเป็นห่วงคนในบ้าน จากนั้นค่อยเอา Insight ไปคัด Interest / Audience / Angle สำหรับรอบ Test และ Scale ต่อ</p></div>""", unsafe_allow_html=True)
     close_module()
 
 
@@ -148,26 +148,26 @@ def render_persona_creative():
 # 05_MID_TARGET_MODULE
 # =========================================================
 def render_mid_target():
-    open_module("03_MID_TARGET_MODULE", "รับคนที่เริ่มสนใจจาก TOP CI แล้วทำให้เข้าใจ เชื่อ และแยก Intent ก่อนส่งไป BOT")
+    open_module("03_MID_TARGET_MODULE", "ต่อซีรีส์จาก TOP และยิงแบบ Retarget ไปหาคนที่มีสัญญาณสนใจ เพื่อดึงเข้า Line OA")
     m1, m2, m3 = st.columns(3)
     with m1:
-        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">MID ROLE</span><h4>กลุ่มเป้าหมายกลางน้ำ</h4><p>คนที่เห็น/ดู/คลิก/มีปฏิสัมพันธ์กับ TOP CI แล้ว แต่ยังไม่พร้อมซื้อทันที ต้องให้เหตุผลก่อนว่า “ทำไมต้องลอง” และ “สินค้าช่วยตรงไหน”</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">MID ROLE</span><h4>กลุ่มเป้าหมายกลางน้ำ</h4><p>คนที่เห็น TOP CI แล้วเริ่มอินกับ Pain เช่น แฟนไม่ชอบกลิ่น / คนในบ้านเป็นห่วง แต่ยังไม่พร้อมซื้อ ต้องพาเข้าสู่บทสนทนาและรีวิวต่อ</p></div>""", unsafe_allow_html=True)
     with m2:
-        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">TARGET SIGNAL</span><h4>สัญญาณที่ใช้ดึงเข้า MID</h4><p>Video View, Engagement, Click, Save, Comment, Inbox เบื้องต้น หรือคนที่ตอบสนองกับ Persona เช่น คู่รัก / ดูแลผู้สูงอายุ / กลิ่นติดคนในบ้าน</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">RETARGET SIGNAL</span><h4>สัญญาณที่ใช้ดึงเข้า MID</h4><p>Video View, Engagement, Click, Save, Share, Comment, Inbox เบื้องต้น หรือคนที่ตอบสนองกับมุม “อยากให้เขาลดเพื่อเรา”</p></div>""", unsafe_allow_html=True)
     with m3:
-        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">MID CONTENT</span><h4>คอนเทนต์ที่ควรใช้</h4><p>Explainer, FAQ, รีวิว, Before/After Situation, วิธีใช้ลูกอมแทนจังหวะอยากสูบ และคอนเทนต์ที่เชื่อม Pain → Solution → Reason to Buy</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">MID GOAL</span><h4>เป้าหมายของ MID</h4><p>ทำให้คนรู้สึกว่า “ควรลองคุย / ควรให้แฟนดู / ควรเก็บไว้ถามใน Line OA” ไม่ใช่แค่รับรู้สินค้าเฉย ๆ</p></div>""", unsafe_allow_html=True)
 
     ci1, ci2 = st.columns(2)
     with ci1:
-        st.markdown("""<div class="ci-card"><span class="pill mid">MID CI 01</span><h3>Explainer / FAQ: ลูกอมช่วยตรงไหน?</h3><p><b>Goal:</b> ทำให้คนที่เริ่มสนใจเข้าใจว่าไม่ได้ขายเวทมนตร์ แต่เป็นตัวช่วยในจังหวะที่ปากอยากสูบ/อยากเคี้ยว</p><div class="ci-meta"><div><b>Hook</b><br>“อยากลดบุหรี่ แต่ปากยังอยากสูบอยู่ใช่ไหม?”</div><div><b>Format</b><br>Short explainer / Talking head / Motion text</div><div><b>Key Message</b><br>ใช้ลูกอมเป็นตัวช่วยคั่นจังหวะอยากสูบ</div><div><b>CTA</b><br>ลองเริ่มจากลดทีละมวน</div></div><ul><li>ตอบคำถาม: ใช้ตอนไหน / เหมาะกับใคร</li><li>โยง Pain จาก TOP → Solution</li><li>คัดคนที่อ่าน/ดูแล้วเริ่มมี Intent</li></ul></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="ci-card"><span class="pill mid">MID CI 01 · RETARGET</span><h3>สอบถามแฟน: ถ้าเขาลดได้ คุณอยากให้เขาเริ่มไหม?</h3><p><b>Insight:</b> คนรักไม่ได้อยากบังคับให้เลิกทันที แต่อยากให้เขา “เริ่มลด” เพราะกลิ่นบุหรี่ทำให้ความใกล้ชิดและบรรยากาศในความสัมพันธ์แย่ลง</p><div class="ci-meta"><div><b>Creative Format</b><br>POV Couple / Question scene / Reaction clip</div><div><b>Hook</b><br>“ลองถามแฟนดู… กลิ่นบุหรี่ทำให้เขาอึดอัดแค่ไหน”</div><div><b>Retarget Audience</b><br>คนดู TOP video, Engaged, Click, Comment/Share มุมคู่รัก</div><div><b>CTA</b><br>ให้แฟนดู / ทัก Line OA เพื่อรับแนวทางเริ่มลด</div></div><ul><li>ต่อจาก TOP ที่แฟนถอยห่างหรือไม่ชอบกลิ่น</li><li>ใช้คำถามจากฝั่งแฟน ไม่ใช่แบรนด์พูดเอง</li><li>คัดคนที่มี Relationship Pain จริง</li></ul></div>""", unsafe_allow_html=True)
     with ci2:
-        st.markdown("""<div class="ci-card"><span class="pill mid">MID CI 02</span><h3>Review / Before-After Situation</h3><p><b>Goal:</b> ทำให้คนเชื่อขึ้นผ่านสถานการณ์จริง เช่น จากเดิมคนรัก/คนในบ้านไม่โอเคกับกลิ่น → เริ่มมีตัวช่วยติดตัว</p><div class="ci-meta"><div><b>Hook</b><br>“ไม่ได้เลิกได้ทันที แต่เริ่มลดได้จริงจังกว่าเดิม”</div><div><b>Format</b><br>POV review / Testimonial / Before-After scene</div><div><b>Key Message</b><br>มีตัวช่วยแทนจังหวะสูบ ทำให้เริ่มคุมพฤติกรรมได้</div><div><b>CTA</b><br>ดูโปร / ทักถาม / กดไป Shopee</div></div><ul><li>ใช้มุมคู่รักหรือดูแลผู้สูงอายุต่อจาก TOP</li><li>เน้นความรู้สึก “เริ่มลดเพื่อคนข้างๆ”</li><li>ดู Comment/Inbox เพื่อแยกคนพร้อมซื้อ</li></ul></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="ci-card"><span class="pill mid">MID CI 02 · RETARGET</span><h3>รีวิวจากแฟน/คนในบ้าน: เขาเริ่มพยายามลดแล้ว</h3><p><b>Insight:</b> คนรอบตัวไม่ได้ต้องการคำสัญญาใหญ่ ๆ แต่ต้องการเห็นสัญญาณว่าเขาเริ่มพยายาม เช่น มีลูกอมติดตัวแทนจังหวะที่อยากสูบ</p><div class="ci-meta"><div><b>Creative Format</b><br>Review scene / Couple testimonial / Family POV</div><div><b>Hook</b><br>“เขายังไม่ได้เลิกทันที… แต่เขาเริ่มพยายามลดแล้ว”</div><div><b>Retarget Audience</b><br>คน Engage TOP/MID, Inbox, Save, Comment เรื่องแฟนหรือคนในบ้าน</div><div><b>CTA</b><br>เข้า Line OA เพื่อดูวิธีเริ่มลด / รับโปร / รับของแถม</div></div><ul><li>ใช้รีวิวเชิงความรู้สึก ไม่ใช่รีวิวสินค้าแข็ง ๆ</li><li>ต่อได้ทั้งคู่รักและดูแลผู้สูงอายุ</li><li>เตรียมส่งคนสนใจเข้า Line OA ก่อนปิดการขาย</li></ul></div>""", unsafe_allow_html=True)
 
     d1, d2 = st.columns(2)
     with d1:
-        st.markdown("""<div class="insight-card"><span class="pill top">MID DETAIL</span><h4>หน้าที่ของ MID Target</h4><p>MID ไม่ได้ปิดการขายทันที แต่ทำหน้าที่กรองคนที่มีความสนใจจริงจาก TOP CI ว่าเขาสนใจเพราะอะไร เช่น สนใจเพราะแฟนบ่นเรื่องกลิ่น หรือสนใจเพราะเป็นห่วงผู้สูงอายุในบ้าน จากนั้นค่อยส่งต่อกลุ่ม Intent สูงไป BOT</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="insight-card"><span class="pill top">MID DETAIL</span><h4>หน้าที่ของ MID Target</h4><p>MID คือสะพานจาก Emotion ไปสู่ Conversation: ให้คนที่อินกับ TOP เริ่มคุย เริ่มถามแฟน เริ่มให้คนในบ้านมีบทบาท แล้วค่อยเก็บคนเข้า Line OA เพื่อ nurturing / offer / ปิดการขายต่อ</p></div>""", unsafe_allow_html=True)
     with d2:
-        st.markdown("""<div class="insight-card"><span class="pill amber">OPTIMIZE NOTE</span><h4>สิ่งที่ต้องดูตอนเทส MID</h4><p>ดู CTR คุณภาพ, Comment intent, Inbox คุณภาพ, LPV/VC/ATC และคำถามซ้ำจากลูกค้า ถ้าคำถามซ้ำเยอะ แปลว่า MID Content ยังต้องอธิบายเพิ่มก่อนเอาไปปิดการขาย</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="insight-card"><span class="pill amber">OPTIMIZE NOTE</span><h4>สิ่งที่ต้องดูตอนเทส MID</h4><p>ดู Comment ที่แท็กแฟน, Inbox ที่ถามวิธีลด, CTR ไป Line OA, Add friend rate, คำถามซ้ำ และคุณภาพบทสนทนา ถ้า engagement สูงแต่ไม่เข้า Line OA ต้องปรับ CTA ให้ชัดขึ้น</p></div>""", unsafe_allow_html=True)
     close_module()
 
 
@@ -193,9 +193,9 @@ def render_lower_funnel():
     open_module("05_BOT_FUNNEL_MODULE", "BOT จะใช้หลังจาก MID คัดคนสนใจจริงแล้ว เพื่อ Retarget และปิดการขาย")
     m1, m2 = st.columns(2)
     with m1:
-        st.markdown("""<div class="mini-card"><span class="pill mid">MID SUMMARY</span><h4>Trust / Explain</h4><p>หลัง TOP CI มีคนสนใจ ค่อยใช้ Explainer, FAQ, Review เพื่อทำให้เชื่อและเข้าใจสินค้า</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="mini-card"><span class="pill mid">MID SUMMARY</span><h4>Conversation / Line OA</h4><p>หลัง TOP CI มีคนอิน ให้ใช้ MID เพื่อพาไปสู่การคุย การรีวิว และการเพิ่มเพื่อน Line OA</p></div>""", unsafe_allow_html=True)
     with m2:
-        st.markdown("""<div class="mini-card"><span class="pill bot">BOT FUNNEL</span><h4>Close / Offer</h4><p>Retarget คน Intent สูงด้วย Offer, Bundle, Review Screenshot และ CTA ไป Shopee / Inbox</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="mini-card"><span class="pill bot">BOT FUNNEL</span><h4>Close / Offer</h4><p>Retarget คนที่เข้า Line OA / ทัก / สนใจสูง ด้วย Offer, Bundle, Review Screenshot และ CTA ซื้อ</p></div>""", unsafe_allow_html=True)
     close_module()
 
 
@@ -203,7 +203,7 @@ def render_lower_funnel():
 # 08_FOOTER_MODULE
 # =========================================================
 def render_footer():
-    st.markdown('<div class="footer-note">Modular Board v0.7 · Added MID CI Cards · TOP → MID → BOT</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer-note">Modular Board v0.8 · MID Retarget CI · Ask Partner / Review / Line OA</div>', unsafe_allow_html=True)
 
 
 # =========================================================
