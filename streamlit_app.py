@@ -39,21 +39,23 @@ def render_theme():
         .module-head { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom: 16px; }
         .module-title { font-size: 14px; font-weight: 850; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
         .module-desc { color: var(--muted); font-size: 13px; line-height:1.55; margin: 4px 0 0; }
-        .hero, .card, .mini-card, .persona-card, .test-card, .insight-card, .ci-card, .traffic-card, .pipe-card, .flow-node, .merge-node { background: rgba(255,255,255,0.9); border: 1px solid var(--line); box-shadow: 0 12px 36px rgba(31,41,55,0.045); }
+        .hero, .card, .mini-card, .persona-card, .test-card, .insight-card, .ci-card, .traffic-card, .pipe-card, .flow-node, .merge-node, .budget-card { background: rgba(255,255,255,0.9); border: 1px solid var(--line); box-shadow: 0 12px 36px rgba(31,41,55,0.045); }
         .hero { border-radius: 28px; padding: 28px 30px; margin-bottom: 20px; }
         .eyebrow { display: inline-flex; padding: 7px 12px; border-radius: 999px; background: #f8fafc; border: 1px solid var(--line); color: var(--muted); font-size: 13px; margin-bottom: 12px; }
         .title { font-size: 38px; font-weight: 850; letter-spacing: -0.04em; margin: 0; color: var(--ink); }
         .subtitle { color: var(--muted); font-size: 16px; margin-top: 8px; line-height: 1.7; }
         .flow-line { height: 3px; border-radius: 99px; background: linear-gradient(90deg, #bfdbfe, #ddd6fe, #bbf7d0); margin: 12px 0 20px 0; }
         .card { border-radius: 24px; padding: 22px; min-height: 270px; height: auto; overflow: visible; }
-        .card h3, .mini-card h4, .persona-card h3, .test-card h4, .insight-card h4, .ci-card h3, .traffic-card h4, .pipe-card h4, .flow-node h4, .merge-node h4 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
-        .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p, .insight-card p, .ci-card p, .ci-card li, .traffic-card p, .traffic-card li, .pipe-card p, .pipe-card li, .flow-node p, .merge-node p, .flow-node li, .merge-node li { color: var(--muted); line-height: 1.62; font-size: 14px; }
+        .card h3, .mini-card h4, .persona-card h3, .test-card h4, .insight-card h4, .ci-card h3, .traffic-card h4, .pipe-card h4, .flow-node h4, .merge-node h4, .budget-card h4 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
+        .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p, .insight-card p, .ci-card p, .ci-card li, .traffic-card p, .traffic-card li, .pipe-card p, .pipe-card li, .flow-node p, .merge-node p, .flow-node li, .merge-node li, .budget-card p, .budget-card li { color: var(--muted); line-height: 1.62; font-size: 14px; }
         .pill { display: inline-block; padding: 7px 11px; border-radius: 999px; font-size: 12px; font-weight: 750; margin-bottom: 12px; }
         .top { background: var(--blue); color: var(--blue-text); }
         .mid { background: var(--lavender); color: var(--lavender-text); }
         .bot { background: var(--mint); color: var(--mint-text); }
         .pink { background: var(--pink); color: var(--pink-text); }
         .amber { background: var(--amber); color: var(--amber-text); }
+        .budget-card { border-radius: 20px; padding: 18px; min-height: 190px; }
+        .budget-number { font-size: 30px; font-weight: 900; letter-spacing: -0.04em; color: var(--ink); margin: 2px 0 10px; }
         .arrow-row { display: flex; align-items: center; justify-content: center; min-height: 270px; margin: 0; color: #c4c9d4; font-size: 30px; font-weight: 800; }
         .mini-card, .persona-card, .test-card, .insight-card, .ci-card, .traffic-card, .pipe-card, .flow-node, .merge-node { border-radius: 20px; padding: 18px; }
         .persona-card, .unknown-card { min-height: 405px; height: auto; overflow: visible; }
@@ -105,6 +107,22 @@ def render_header():
         """,
         unsafe_allow_html=True,
     )
+
+
+def render_budget_plan():
+    open_module("00_BUDGET_AND_AD_MANAGEMENT_PLAN", "งบเฉลี่ยสำหรับเริ่มยิงและแผนแบ่งงบตอน Manage Ads")
+    b1, b2, b3, b4 = st.columns(4)
+    with b1:
+        st.markdown("""<div class="budget-card"><span class="pill top">TOTAL TEST BUDGET</span><h4>งบเฉลี่ยเริ่มต้น</h4><div class="budget-number">1,600–3,000฿</div><p>ใช้เป็นงบทดสอบ Funnel ชุดแรก เพื่อดูว่า CI ไหนสร้าง signal ดีพอจะ Retarget ต่อ</p></div>""", unsafe_allow_html=True)
+    with b2:
+        st.markdown("""<div class="budget-card"><span class="pill pink">TRAFFIC CI 01</span><h4>คู่รัก</h4><div class="budget-number">600–1,000฿</div><p>ยิงหา signal จากมุมแฟนไม่โอเคกับกลิ่น ดู Video View, Click, Engage, Comment/Share</p></div>""", unsafe_allow_html=True)
+    with b3:
+        st.markdown("""<div class="budget-card"><span class="pill mid">TRAFFIC CI 02</span><h4>ดูแลผู้สูงอายุ</h4><div class="budget-number">600–1,000฿</div><p>ยิงหา signal จากมุมคนในบ้านเป็นห่วง ดู Video View, Click, Engage, Comment เรื่องครอบครัว</p></div>""", unsafe_allow_html=True)
+    with b4:
+        st.markdown("""<div class="budget-card"><span class="pill amber">RETARGET / MID</span><h4>ดึงเข้า Line OA</h4><div class="budget-number">400–1,000฿</div><p>ยิง Warm audience ที่มี signal จาก Traffic CI ไปหา MID CI: สอบถามแฟน / รีวิว / Line OA</p></div>""", unsafe_allow_html=True)
+
+    st.markdown("""<div class="insight-card"><span class="pill bot">AD MANAGEMENT NOTE</span><h4>แผนตอน Manage Ads</h4><p>เริ่มจากแบ่งงบให้ Traffic CI 2 ตัวใกล้เคียงกันก่อน เพื่อวัดว่า Persona ไหนให้ signal ดีกว่า จากนั้นเอาคนดูวิดีโอ / Engage / Click / Comment / Share เข้า Retarget Pool แล้วค่อยโยกงบไป MID Retarget ถ้า CI ไหน CTR/Engagement/Comment intent ดีกว่า ให้เพิ่มงบฝั่งนั้นหรือแตก angle เพิ่ม</p></div>""", unsafe_allow_html=True)
+    close_module()
 
 
 def render_top_ci_workflow():
@@ -215,6 +233,7 @@ def render_footer():
 def main():
     render_theme()
     render_header()
+    render_budget_plan()
     render_top_ci_workflow()
     render_persona_creative()
     render_traffic_to_retarget_pipe()
