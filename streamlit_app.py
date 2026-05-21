@@ -6,7 +6,7 @@ def render_theme():
     st.markdown("""
     <style>
     :root{--bg:#fbfbfe;--ink:#1f2937;--muted:#6b7280;--line:#e9edf5;--blue:#dbeafe;--blue-text:#1d4ed8;--lav:#ede9fe;--lav-text:#6d28d9;--mint:#dcfce7;--mint-text:#15803d;--pink:#fce7f3;--pink-text:#be185d;--amber:#fef3c7;--amber-text:#b45309;--sky:#e0f2fe;--sky-text:#0369a1;--rose:#ffe4e6;--rose-text:#be123c}
-    .stApp{background:radial-gradient(circle at top left,#fdf2f8 0,transparent 28%),radial-gradient(circle at top right,#dbeafe 0,transparent 26%),radial-gradient(circle at bottom,#dcfce7 0,transparent 24%),var(--bg);color:var(--ink)}[data-testid="stSidebar"]{display:none}.main .block-container{padding-top:2.2rem;max-width:1280px}.module-wrap{background:rgba(255,255,255,.52);border:1px solid rgba(237,240,247,.95);border-radius:30px;padding:22px 22px 26px;margin:28px 0;box-shadow:0 18px 48px rgba(31,41,55,.035)}.module-title{font-size:14px;font-weight:850;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0}.module-desc{color:var(--muted);font-size:13px;line-height:1.55;margin:4px 0 16px}.hero,.card,.mini-card,.persona-card,.insight-card,.ci-card,.flow-node,.merge-node,.budget-card,.placeholder,.date-card{border:1px solid var(--line);box-shadow:0 12px 36px rgba(31,41,55,.045)}.hero{border-radius:28px;padding:28px 30px;margin-bottom:20px;background:linear-gradient(135deg,#fff,#fdf2f8 52%,#eff6ff)}.eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:13px;margin-bottom:12px}.title{font-size:38px;font-weight:850;letter-spacing:-.04em;margin:0;color:var(--ink)}.subtitle{color:var(--muted);font-size:16px;margin-top:8px;line-height:1.7}.pill{display:inline-block;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:750;margin-bottom:12px}.top{background:var(--blue);color:var(--blue-text)}.mid{background:var(--lav);color:var(--lav-text)}.bot{background:var(--mint);color:var(--mint-text)}.pink{background:var(--pink);color:var(--pink-text)}.amber{background:var(--amber);color:var(--amber-text)}.sky{background:var(--sky);color:var(--sky-text)}.rose{background:var(--rose);color:var(--rose-text)}.card,.budget-card,.mini-card,.persona-card,.insight-card,.ci-card,.flow-node,.merge-node,.placeholder,.date-card{border-radius:20px;padding:18px;background:#fff}.card{min-height:270px;border-radius:24px}.budget-card{min-height:190px}.date-card{min-height:225px}.mini-card{min-height:175px}.persona-card{min-height:425px}.insight-card{min-height:160px;margin-top:18px}.ci-card{min-height:390px;margin-top:18px}.flow-node{min-height:170px}.merge-node{min-height:190px}.placeholder{min-height:190px;border:1.5px dashed #cbd5e1}.date-number{font-size:32px;font-weight:950;letter-spacing:-.05em;color:var(--ink);margin:0 0 8px}.age-box{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin:10px 0 12px;color:var(--ink);font-size:13.5px;line-height:1.5}.pastel-blue{background:linear-gradient(135deg,#fff,#dbeafe)}.pastel-pink{background:linear-gradient(135deg,#fff,#fce7f3)}.pastel-lav{background:linear-gradient(135deg,#fff,#ede9fe)}.pastel-mint{background:linear-gradient(135deg,#fff,#dcfce7)}.pastel-amber{background:linear-gradient(135deg,#fff,#fef3c7)}.pastel-sky{background:linear-gradient(135deg,#fff,#e0f2fe)}.pastel-rose{background:linear-gradient(135deg,#fff,#ffe4e6)}h3,h4{margin:0 0 8px;color:var(--ink);letter-spacing:-.02em}p,li{color:var(--muted);line-height:1.62;font-size:14px}.budget-number{font-size:30px;font-weight:900;letter-spacing:-.04em;color:var(--ink);margin:2px 0 10px}.arrow-row{display:flex;align-items:center;justify-content:center;min-height:270px;color:#c4c9d4;font-size:30px;font-weight:800}.flow-line{height:3px;border-radius:99px;background:linear-gradient(90deg,#bfdbfe,#fbcfe8,#ddd6fe,#bbf7d0);margin:12px 0 20px}.ci-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.ci-meta div{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px;padding:10px;color:var(--muted);font-size:13px;line-height:1.45}.visual-flow{margin-top:18px;padding:22px;border-radius:26px;background:rgba(255,255,255,.66);border:1px solid var(--line)}.pipe-down{height:34px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:30px;font-weight:900}.pipe-h{height:4px;border-radius:999px;background:linear-gradient(90deg,#fbcfe8,#bfdbfe);margin:15px 0}.pipe-v{width:4px;height:34px;border-radius:999px;background:#cbd5e1;margin:0 auto}.person-icon{font-size:42px;margin-bottom:8px}.unknown-card{min-height:425px;border:1.5px dashed #cbd5e1;background:linear-gradient(135deg,#fff,#f8fafc);border-radius:20px;padding:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.unknown-mark{font-size:58px;font-weight:900;color:#94a3b8}.footer-note{color:var(--muted);text-align:center;padding:20px 0 6px;font-size:13px}
+    .stApp{background:radial-gradient(circle at top left,#fdf2f8 0,transparent 28%),radial-gradient(circle at top right,#dbeafe 0,transparent 26%),radial-gradient(circle at bottom,#dcfce7 0,transparent 24%),var(--bg);color:var(--ink)}[data-testid="stSidebar"]{display:none}.main .block-container{padding-top:2.2rem;max-width:1280px}.module-wrap{background:rgba(255,255,255,.52);border:1px solid rgba(237,240,247,.95);border-radius:30px;padding:22px 22px 26px;margin:28px 0;box-shadow:0 18px 48px rgba(31,41,55,.035)}.module-title{font-size:14px;font-weight:850;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0}.module-desc{color:var(--muted);font-size:13px;line-height:1.55;margin:4px 0 16px}.hero,.card,.mini-card,.persona-card,.insight-card,.ci-card,.flow-node,.merge-node,.budget-card,.placeholder,.date-card,.exec-card,.gap-card,.node-card{border:1px solid var(--line);box-shadow:0 12px 36px rgba(31,41,55,.045)}.hero{border-radius:28px;padding:28px 30px;margin-bottom:20px;background:linear-gradient(135deg,#fff,#fdf2f8 52%,#eff6ff)}.eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:13px;margin-bottom:12px}.title{font-size:38px;font-weight:850;letter-spacing:-.04em;margin:0;color:var(--ink)}.subtitle{color:var(--muted);font-size:16px;margin-top:8px;line-height:1.7}.pill{display:inline-block;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:750;margin-bottom:12px}.top{background:var(--blue);color:var(--blue-text)}.mid{background:var(--lav);color:var(--lav-text)}.bot{background:var(--mint);color:var(--mint-text)}.pink{background:var(--pink);color:var(--pink-text)}.amber{background:var(--amber);color:var(--amber-text)}.sky{background:var(--sky);color:var(--sky-text)}.rose{background:var(--rose);color:var(--rose-text)}.card,.budget-card,.mini-card,.persona-card,.insight-card,.ci-card,.flow-node,.merge-node,.placeholder,.date-card,.exec-card,.gap-card,.node-card{border-radius:20px;padding:18px;background:#fff}.card{min-height:270px;border-radius:24px}.budget-card{min-height:190px}.date-card{min-height:225px}.mini-card{min-height:175px}.persona-card{min-height:425px}.insight-card{min-height:160px;margin-top:18px}.ci-card{min-height:390px;margin-top:18px}.flow-node{min-height:170px}.merge-node{min-height:190px}.placeholder{min-height:190px;border:1.5px dashed #cbd5e1}.exec-card{min-height:155px}.gap-card{min-height:170px}.node-card{min-height:120px}.date-number{font-size:32px;font-weight:950;letter-spacing:-.05em;color:var(--ink);margin:0 0 8px}.age-box{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin:10px 0 12px;color:var(--ink);font-size:13.5px;line-height:1.5}.pastel-blue{background:linear-gradient(135deg,#fff,#dbeafe)}.pastel-pink{background:linear-gradient(135deg,#fff,#fce7f3)}.pastel-lav{background:linear-gradient(135deg,#fff,#ede9fe)}.pastel-mint{background:linear-gradient(135deg,#fff,#dcfce7)}.pastel-amber{background:linear-gradient(135deg,#fff,#fef3c7)}.pastel-sky{background:linear-gradient(135deg,#fff,#e0f2fe)}.pastel-rose{background:linear-gradient(135deg,#fff,#ffe4e6)}h3,h4{margin:0 0 8px;color:var(--ink);letter-spacing:-.02em}p,li{color:var(--muted);line-height:1.62;font-size:14px}.budget-number{font-size:30px;font-weight:900;letter-spacing:-.04em;color:var(--ink);margin:2px 0 10px}.arrow-row{display:flex;align-items:center;justify-content:center;min-height:170px;color:#c4c9d4;font-size:30px;font-weight:800}.flow-line{height:3px;border-radius:99px;background:linear-gradient(90deg,#bfdbfe,#fbcfe8,#ddd6fe,#bbf7d0);margin:12px 0 20px}.ci-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.ci-meta div{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px;padding:10px;color:var(--muted);font-size:13px;line-height:1.45}.visual-flow{margin-top:18px;padding:22px;border-radius:26px;background:rgba(255,255,255,.66);border:1px solid var(--line)}.pipe-down{height:34px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:30px;font-weight:900}.pipe-h{height:4px;border-radius:999px;background:linear-gradient(90deg,#fbcfe8,#bfdbfe);margin:15px 0}.pipe-v{width:4px;height:34px;border-radius:999px;background:#cbd5e1;margin:0 auto}.person-icon{font-size:42px;margin-bottom:8px}.unknown-card{min-height:425px;border:1.5px dashed #cbd5e1;background:linear-gradient(135deg,#fff,#f8fafc);border-radius:20px;padding:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.unknown-mark{font-size:58px;font-weight:900;color:#94a3b8}.exec-headline{font-size:28px;font-weight:900;letter-spacing:-.04em;color:var(--ink);margin:6px 0 10px}.connector{display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:28px;font-weight:900;min-height:120px}.circle-node{width:118px;height:118px;border-radius:999px;border:1px solid var(--line);background:#fff;box-shadow:0 12px 36px rgba(31,41,55,.045);display:flex;align-items:center;justify-content:center;text-align:center;margin:0 auto;color:var(--ink);font-weight:850;line-height:1.25;font-size:14px}.thin-rule{height:1px;background:#e5e7eb;margin:18px 0}.footer-note{color:var(--muted);text-align:center;padding:20px 0 6px;font-size:13px}
     </style>""", unsafe_allow_html=True)
 
 def open_module(t,d): st.markdown(f'<div class="module-wrap"><div class="module-title">{t}</div><p class="module-desc">{d}</p>', unsafe_allow_html=True)
@@ -120,88 +120,97 @@ def render_action_plan_summary():
     st.markdown('<div class="insight-card pastel-amber"><span class="pill amber">สรุปแนวคิดหลัก</span><h4>ตอนนี้ไม่ใช่แค่เปลี่ยนแอด แต่ต้องเปลี่ยนวิธีคัดคน</h4><p>ปัญหาหลักคือระบบเดิมอาจหา Traffic ได้ แต่ไม่ได้การันตีว่าคนเหล่านั้นมี Intent และกำลังซื้อจริง แนวทางแก้คือกลับมาคุม Persona, Creative, Offer, Retarget และการอ่านผลด้วยมือก่อน เมื่อเจอตัวที่ชนะค่อย Scale</p></div>', unsafe_allow_html=True)
     close_module()
 
-def render_exec_summary():
-    open_module('01_EXECUTIVE_SUMMARY','Key Message: Fix Classic ไม่ใช่สินค้าปิดง่ายจาก Inbox ตรงอีกต่อไป ต้องเปลี่ยนจาก Message Funnel เป็น Data-led Funnel')
-    c1,c2,c3=st.columns(3)
-    with c1: st.markdown('<div class="mini-card pastel-rose"><span class="pill rose">CURRENT RISK</span><h4>Lead เยอะ แต่คุณภาพต่ำ</h4><p>ลูกค้าทักถามราคาแล้วหาย เพราะยังไม่ผ่านชั้นกรองข้อมูล ราคา วิธีใช้ และ expectation ก่อนเข้าแชท</p></div>', unsafe_allow_html=True)
-    with c2: st.markdown('<div class="mini-card pastel-amber"><span class="pill amber">STRATEGIC SHIFT</span><h4>เปลี่ยน Funnel หลัก</h4><p>จาก Ads → Inbox → Admin เป็น Ads → Landing Page → LINE OA → Admin เพื่อกรองและเก็บข้อมูลก่อนปิดการขาย</p></div>', unsafe_allow_html=True)
-    with c3: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">EXPECTED OUTCOME</span><h4>ลด Lead ห่วย เพิ่ม Lead คุณภาพ</h4><p>ผู้บริหารจะเห็นว่าเงินโฆษณาถูกใช้เพื่อหา Qualified Lead ไม่ใช่แค่หา Message ถูก</p></div>', unsafe_allow_html=True)
+def render_exec_storyline():
+    open_module('00_EXECUTIVE_STORYLINE','ผู้บริหารต้องเห็นเหตุผลเชื่อมกัน: ปัญหาขาดตรงไหน → กระทบอะไร → ทำไมต้องสร้าง LDP + Tracking')
+    c1,a1,c2,a2,c3,a3,c4=st.columns([1,.08,1,.08,1,.08,1])
+    nodes=[('GAP','ไม่มีชั้นกรองก่อนแชท','rose','pastel-rose'),('IMPACT','Lead ดิบ / Admin เสียเวลา / Meta เรียนรู้ผิด','amber','pastel-amber'),('SOLUTION','เพิ่ม Landing Page เป็น Filter + Data Layer','top','pastel-blue'),('CONTROL','วัดจาก LPV → LineClick → Price Accepted → Order','bot','pastel-mint')]
+    for col,node in zip([c1,c2,c3,c4],nodes):
+        with col: st.markdown(f'<div class="exec-card {node[3]}"><span class="pill {node[2]}">{node[0]}</span><h4>{node[1]}</h4></div>', unsafe_allow_html=True)
+    for a in [a1,a2,a3]:
+        with a: st.markdown('<div class="connector">→</div>', unsafe_allow_html=True)
     close_module()
 
-def render_exec_situation():
-    open_module('02_CURRENT_SITUATION_ANALYSIS','สินค้า Fix Classic มี demand จริง แต่ราคาต่อการตัดสินใจสูง และต้องอาศัยการอธิบายก่อนปิด')
-    c1,c2,c3,c4=st.columns(4)
-    data=[('ราคา/ซอง','350฿','ราคาสูงเมื่อเทียบกับการตัดสินใจจากแอด','top','pastel-blue'),('จำนวน/ซอง','10 เม็ด','เฉลี่ยประมาณ 35 บาทต่อเม็ด','amber','pastel-amber'),('Customer Perception','Cost/Day สูง','ถ้าต้องใช้หลายเม็ดต่อวัน ลูกค้าจะรู้สึกว่าค่าใช้จ่ายสูง','rose','pastel-rose'),('Sales Reality','ต้องอธิบาย','ไม่ใช่ impulse purchase ต้องใช้ข้อมูล รีวิว FAQ และแอดมินช่วยปิด','bot','pastel-mint')]
-    for col,x in zip([c1,c2,c3,c4],data):
-        with col: st.markdown(f'<div class="budget-card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><div class="budget-number">{x[1]}</div><p>{x[2]}</p></div>', unsafe_allow_html=True)
-    close_module()
-
-def render_exec_problem_breakdown():
-    open_module('03_PAIN_POINT_BREAKDOWN','ปัญหาหลักไม่ใช่แค่แอดแพง แต่ Funnel ไม่มีชั้นกรองก่อนเข้าแชท')
-    p1,p2,p3=st.columns(3)
-    with p1: st.markdown('<div class="ci-card pastel-rose"><span class="pill rose">PAIN 01</span><h3>ไม่มี Landing Page เป็นชั้นกรอง</h3><p>Funnel ปัจจุบันเป็น Ads → Inbox/Chat → Admin ทำให้ลูกค้ายังไม่เห็นราคา วิธีใช้ รีวิว FAQ และเงื่อนไขผลลัพธ์ก่อนทัก</p><div class="ci-meta"><div>ราคา</div><div>วิธีใช้</div><div>เหมาะ/ไม่เหมาะกับใคร</div><div>FAQ / รีวิว</div></div></div>', unsafe_allow_html=True)
-    with p2: st.markdown('<div class="ci-card pastel-amber"><span class="pill amber">PAIN 02</span><h3>Meta ไม่มี Signal คุณภาพ</h3><p>ระบบเห็นเพียง Impression, Click, Message แต่ไม่รู้ว่าใครอ่านราคาแล้วสนใจ ใครกด LINE หลังอ่าน และใครรับราคาได้จริง</p><div class="ci-meta"><div>Scroll</div><div>Price Seen</div><div>Line Click</div><div>Price Accepted</div></div></div>', unsafe_allow_html=True)
-    with p3: st.markdown('<div class="ci-card pastel-lav"><span class="pill mid">PAIN 03</span><h3>ข้อมูลเก่าไม่สะอาดสำหรับ LAL</h3><p>Lead เดิมอาจปนคนถามราคาแล้วหาย คนไม่มีกำลังซื้อ คนหวังผลเกินจริง หรือคนทักเล่น จึงยังไม่ควรใช้เป็นฐาน Lookalike หลัก</p><div class="ci-meta"><div>Bad Lead</div><div>Lost Price</div><div>No Reply</div><div>Negative</div></div></div>', unsafe_allow_html=True)
+def render_exec_gap_map():
+    open_module('01_GAP_MAP','Key Message: ปัญหาไม่ได้อยู่ที่แอดอย่างเดียว แต่อยู่ที่ Funnel ขาดชั้นคัดกรองและขาดข้อมูลคุณภาพ')
+    left,mid,right=st.columns([1,.16,1])
+    with left:
+        st.markdown('<div class="gap-card pastel-rose"><span class="pill rose">CURRENT FUNNEL</span><h3>Ads → Inbox → Admin</h3><p>ลูกค้ายังไม่เห็นราคา วิธีใช้ FAQ รีวิว และเงื่อนไขผลลัพธ์ก่อนทัก</p></div>', unsafe_allow_html=True)
+        st.markdown('<div class="thin-rule"></div>', unsafe_allow_html=True)
+        st.markdown('<div class="gap-card pastel-amber"><span class="pill amber">WHAT BREAKS</span><h3>Meta หา “คนทักง่าย”</h3><p>ระบบเห็นแค่คลิก/ข้อความ แต่ไม่รู้ว่าใครรับราคาได้และมีโอกาสซื้อจริง</p></div>', unsafe_allow_html=True)
+    with mid: st.markdown('<div class="connector">→</div><div class="connector">↓</div><div class="connector">→</div>', unsafe_allow_html=True)
+    with right:
+        st.markdown('<div class="gap-card pastel-blue"><span class="pill top">NEW CONTROL POINT</span><h3>Landing Page</h3><p>ทำหน้าที่กรองราคา อธิบายวิธีใช้ จัด expectation และสร้าง Event คุณภาพ</p></div>', unsafe_allow_html=True)
+        st.markdown('<div class="thin-rule"></div>', unsafe_allow_html=True)
+        st.markdown('<div class="gap-card pastel-mint"><span class="pill bot">BUSINESS RESULT</span><h3>Lead น้อยลงได้ แต่ต้องดีขึ้น</h3><p>เป้าหมายคือ Qualified Lead / Price Accepted / Order ไม่ใช่ Cost per Message ต่ำอย่างเดียว</p></div>', unsafe_allow_html=True)
     close_module()
 
 def render_exec_funnel_strategy():
-    open_module('04_FUNNEL_STRATEGY','Strategic Solution: ใช้ Landing Page เป็นตัวกรอง + ตัวเก็บข้อมูล ก่อนส่งเข้า LINE OA')
+    open_module('02_RECOMMENDED_FUNNEL','Strategic Solution: เปลี่ยนจาก Message Funnel เป็น Data-led Funnel')
     st.markdown('<div class="visual-flow">', unsafe_allow_html=True)
-    c1,a1,c2,a2,c3,a3,c4=st.columns([1,.12,1,.12,1,.12,1])
-    with c1: st.markdown('<div class="flow-node pastel-blue"><span class="pill top">META ADS</span><h4>Cold Traffic</h4><p>Price upfront / POV / Problem Routine</p></div>', unsafe_allow_html=True)
-    with a1: st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
-    with c2: st.markdown('<div class="flow-node pastel-amber"><span class="pill amber">LANDING PAGE</span><h4>Filter Layer</h4><p>ราคา วิธีใช้ FAQ รีวิว เงื่อนไขผลลัพธ์</p></div>', unsafe_allow_html=True)
-    with a2: st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
-    with c3: st.markdown('<div class="flow-node pastel-mint"><span class="pill bot">LINE OA</span><h4>Qualified Intent</h4><p>คนที่อ่านแล้วกดเข้า LINE มีคุณภาพสูงกว่า Message ดิบ</p></div>', unsafe_allow_html=True)
-    with a3: st.markdown('<div class="arrow-row">→</div>', unsafe_allow_html=True)
-    with c4: st.markdown('<div class="flow-node pastel-pink"><span class="pill pink">ADMIN CLOSE</span><h4>Close & Status</h4><p>Mark status เพื่อวัดคุณภาพ Lead และยอดขายจริง</p></div>', unsafe_allow_html=True)
+    c1,a1,c2,a2,c3,a3,c4=st.columns([1,.1,1,.1,1,.1,1])
+    with c1: st.markdown('<div class="circle-node">Meta Ads<br><span style="color:#6b7280;font-size:12px;">Traffic Source</span></div>', unsafe_allow_html=True)
+    with a1: st.markdown('<div class="connector">→</div>', unsafe_allow_html=True)
+    with c2: st.markdown('<div class="circle-node">Landing Page<br><span style="color:#6b7280;font-size:12px;">Filter + Educate</span></div>', unsafe_allow_html=True)
+    with a2: st.markdown('<div class="connector">→</div>', unsafe_allow_html=True)
+    with c3: st.markdown('<div class="circle-node">LINE OA<br><span style="color:#6b7280;font-size:12px;">Qualified Intent</span></div>', unsafe_allow_html=True)
+    with a3: st.markdown('<div class="connector">→</div>', unsafe_allow_html=True)
+    with c4: st.markdown('<div class="circle-node">Admin Close<br><span style="color:#6b7280;font-size:12px;">Status + Order</span></div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
+    c5,c6,c7=st.columns(3)
+    with c5: st.markdown('<div class="node-card pastel-amber"><span class="pill amber">WHY LDP</span><p>คนที่รับราคาไม่ได้จะหลุดก่อนเข้าแชท ลดภาระแอดมิน</p></div>', unsafe_allow_html=True)
+    with c6: st.markdown('<div class="node-card pastel-blue"><span class="pill top">WHY TRACKING</span><p>เห็นว่าแอดไหนพาคนอ่านจริง กด LINE จริง และรับราคาได้จริง</p></div>', unsafe_allow_html=True)
+    with c7: st.markdown('<div class="node-card pastel-mint"><span class="pill bot">WHY STATUS</span><p>แยก New Lead / Price Accepted / Lost Price / Order เพื่อวัดคุณภาพจริง</p></div>', unsafe_allow_html=True)
     close_module()
 
-def render_exec_measurement():
-    open_module('05_MEASUREMENT_SYSTEM','ระบบวัดผลใหม่ต้องเห็นทั้ง Ad Cost, Landing Behavior, Chat Quality และ Revenue')
+def render_exec_signal_ladder():
+    open_module('03_SIGNAL_LADDER','Executive Insight: ต้องสอนระบบให้เห็น Intent ที่ลึกกว่า Click และ Message')
+    c1,a1,c2,a2,c3,a3,c4,a4,c5=st.columns([1,.08,1,.08,1,.08,1,.08,1])
+    steps=[('01','LPV','เห็นว่าเข้าหน้าเว็บจริง','top','pastel-blue'),('02','Scroll / Price Seen','อ่านข้อมูลและเจอราคา','amber','pastel-amber'),('03','Line Click','สนใจพอจะคุยต่อ','mid','pastel-lav'),('04','Price Accepted','รับราคา/ขอโปร/ขอสั่ง','pink','pastel-pink'),('05','Order / Revenue','วัดผลธุรกิจจริง','bot','pastel-mint')]
+    for col,x in zip([c1,c2,c3,c4,c5],steps):
+        with col: st.markdown(f'<div class="node-card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><h4>{x[1]}</h4><p>{x[2]}</p></div>', unsafe_allow_html=True)
+    for a in [a1,a2,a3,a4]:
+        with a: st.markdown('<div class="connector">→</div>', unsafe_allow_html=True)
+    close_module()
+
+def render_exec_measurement_system():
+    open_module('04_MEASUREMENT_SYSTEM','Dashboard ต้องเชื่อมต้นทุนโฆษณา พฤติกรรมบนหน้าเว็บ คุณภาพแชท และยอดขาย')
     c1,c2,c3,c4,c5=st.columns(5)
-    blocks=[('META ADS','Spend, CPM, CTR, CPC, LPV, Creative','top','pastel-blue'),('LDP / GA4','PageView, Scroll, Click LINE, Time on page','amber','pastel-amber'),('LINE / CHAT','New Lead, Price Accepted, Lost Price','mid','pastel-lav'),('ORDERS','Order, Revenue, Product, Admin','bot','pastel-mint'),('DASHBOARD','n8n → Sheet/BigQuery → Looker → Alert','pink','pastel-pink')]
+    blocks=[('META','Spend / CTR / CPC / LPV','top','pastel-blue'),('GA4 / LDP','PageView / Scroll / LineClick','amber','pastel-amber'),('LINE STATUS','Price Accepted / Lost Price','mid','pastel-lav'),('ORDER','Revenue / Product / Admin','bot','pastel-mint'),('LOOKER','KPI / Alert / Decision','pink','pastel-pink')]
     for col,x in zip([c1,c2,c3,c4,c5],blocks):
-        with col: st.markdown(f'<div class="mini-card {x[3]}"><span class="pill {x[2]}">{x[0]}</span><p>{x[1]}</p></div>', unsafe_allow_html=True)
+        with col: st.markdown(f'<div class="exec-card {x[3]}"><span class="pill {x[2]}">{x[0]}</span><p>{x[1]}</p></div>', unsafe_allow_html=True)
     close_module()
 
-def render_exec_kpi_guardrail():
-    open_module('06_KPI_AND_GUARDRAIL','ไม่ควรวัดแค่ Cost per Message เพราะข้อความถูกไม่ได้แปลว่าขายได้')
-    k1,k2=st.columns(2)
-    with k1: st.markdown('<div class="insight-card pastel-sky"><span class="pill top">KPI STRUCTURE</span><h4>วัดคุณภาพ Funnel ทั้งเส้น</h4><p>Cost per LPV, Cost per LINE Click, Cost per Price Accepted, Cost per Qualified Lead, Cost per Order, CAC, ROAS จริง, Lost Price Rate, Close Rate, Revenue per Lead</p></div>', unsafe_allow_html=True)
-    with k2: st.markdown('<div class="insight-card pastel-rose"><span class="pill rose">KILL RULE</span><h4>ตั้ง Guardrail เพื่อไม่ให้เผาเงินซ้ำ</h4><p>Spend ≥300 ไม่มี LPV/LINE Click หยุด Creative, Spend ≥500 ไม่มี Qualified Lead หยุด Ad Set, Spend ≥1,000 ไม่มี Order หยุด Test, Lost Price Rate >70% ต้องปรับ Creative/Offer</p></div>', unsafe_allow_html=True)
+def render_exec_guardrail():
+    open_module('05_KPI_GUARDRAIL','Guardrail ช่วยให้ทีมไม่เผาเงินซ้ำ และทำให้การตัดสินใจไม่ขึ้นกับความรู้สึก')
+    g1,g2,g3,g4=st.columns(4)
+    rules=[('Creative Kill','Spend ≥300 แต่ไม่มี LPV / LINE Click','rose','pastel-rose'),('Ad Set Kill','Spend ≥500 แต่ไม่มี Qualified Lead','amber','pastel-amber'),('Test Kill','Spend ≥1,000 แต่ไม่มี Order','pink','pastel-pink'),('Offer Alert','Lost Price Rate >70% ต้องปรับราคา/offer/creative','bot','pastel-mint')]
+    for col,x in zip([g1,g2,g3,g4],rules):
+        with col: st.markdown(f'<div class="exec-card {x[3]}"><span class="pill {x[2]}">{x[0]}</span><h4>{x[1]}</h4></div>', unsafe_allow_html=True)
     close_module()
 
-def render_exec_data_clean():
-    open_module('07_ACCOUNT_AND_AUDIENCE_STRATEGY','เก็บ Trust ของเพจเดิม แต่ตัด Signal ห่วยจากบัญชี/ข้อมูลเดิม')
-    c1,c2,c3=st.columns(3)
-    with c1: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">KEEP</span><h4>ใช้เพจเดิม</h4><p>ถ้า Page Quality ไม่ติดปัญหา ให้เก็บ social proof และ trust เดิมไว้</p></div>', unsafe_allow_html=True)
-    with c2: st.markdown('<div class="mini-card pastel-blue"><span class="pill top">RESET</span><h4>ใช้ Ad Account / Pixel ใหม่</h4><p>ใช้บัญชีสะอาด เช่น fix k1, Dataset ใหม่, UTM ใหม่, Audience ใหม่ และไม่ใช้ LAL จาก lead เก่า</p></div>', unsafe_allow_html=True)
-    with c3: st.markdown('<div class="mini-card pastel-amber"><span class="pill amber">SEGMENT</span><h4>แยก Customer List</h4><p>Buyer จริง, High Value Buyer, Bad Lead / Lost Price ต้องแยกกัน เพื่อใช้ retarget หรือ exclude ได้แม่นขึ้น</p></div>', unsafe_allow_html=True)
-    close_module()
-
-def render_exec_creative():
-    open_module('08_CREATIVE_DIRECTION','ลด Overclaim และเปลี่ยน Positioning เป็นตัวช่วยคุมพฤติกรรมระหว่างวัน')
-    c1,c2=st.columns(2)
-    with c1: st.markdown('<div class="ci-card pastel-rose"><span class="pill rose">AVOID</span><h3>ลดคำเคลมที่แรงเกินไป</h3><p>หลีกเลี่ยงข้อความประเภท เลิกบุหรี่ได้, ลดสูบตั้งแต่เม็ดแรก, หายอยาก, ไม่กลับไปสูบอีก, เห็นผลทันที เพราะเพิ่มความคาดหวังเกินจริงและเสี่ยง negative feedback</p></div>', unsafe_allow_html=True)
-    with c2: st.markdown('<div class="ci-card pastel-mint"><span class="pill bot">USE</span><h3>สื่อสารแบบคุม Expectation</h3><p>ลูกอมสมุนไพรสำหรับคนสูบ, พกไว้อมหลังสูบ, ตัวช่วยระหว่างวัน, ช่วยให้ปากสดชื่น, สำหรับคนที่อยากค่อย ๆ คุมพฤติกรรมสูบ, อ่านรายละเอียดก่อนรับโปรใน LINE</p></div>', unsafe_allow_html=True)
+def render_exec_before_after():
+    open_module('06_BEFORE_AFTER','Before → After: เปลี่ยนจากการยิงหา Message เป็นระบบหา Qualified Lead')
+    b,a=st.columns(2)
+    with b:
+        st.markdown('<div class="ci-card pastel-rose"><span class="pill rose">BEFORE</span><h3>Ads → Inbox</h3><p>ได้ lead ดิบจำนวนมาก แอดมินต้องคัดกรองเองในแชท และ Meta เรียนรู้จากคนที่ทักง่าย ไม่ใช่คนที่ซื้อจริง</p><div class="ci-meta"><div>ถามราคาแล้วหาย</div><div>ไม่มี Event คุณภาพ</div><div>ใช้ LAL เสี่ยงขยาย lead ห่วย</div><div>วัด Cost/message มากเกินไป</div></div></div>', unsafe_allow_html=True)
+    with a:
+        st.markdown('<div class="ci-card pastel-mint"><span class="pill bot">AFTER</span><h3>Ads → LDP → LINE → Admin</h3><p>กรองคนด้วยราคาและข้อมูลก่อนเข้า LINE เก็บ Event เพื่อสร้าง Retarget / Clean Audience และวัดถึง Price Accepted / Order</p><div class="ci-meta"><div>อ่านก่อนทัก</div><div>LineClick Event</div><div>Clean Audience</div><div>วัด Qualified Lead</div></div></div>', unsafe_allow_html=True)
     close_module()
 
 def render_exec_roadmap():
-    open_module('09_7_DAY_ROADMAP','Execution Plan 7 วัน เพื่อย้ายจาก Funnel เดิมสู่ Data-led Funnel')
+    open_module('07_7_DAY_ROADMAP','Roadmap 7 วัน: ทำให้ Funnel ใหม่พร้อมเทสแบบคุมความเสี่ยง')
     d1,d2,d3,d4=st.columns(4)
-    steps=[('DAY 1','สร้าง LDP','ราคา/แพ็ก/วิธีใช้/FAQ/รีวิว + ปุ่ม LINE พร้อม tracking','pink','pastel-pink'),('DAY 2','ตั้ง Tracking','UTM, PageView, ViewContent, Scroll, LineClick, n8n, Dashboard','top','pastel-blue'),('DAY 3','เตรียม Data','Buyer list, Bad lead/lost price, สถานะแชทใหม่, เทรนแอดมิน','amber','pastel-amber'),('DAY 4','Launch Clean Test','งบ 300–500/วัน, บัญชีสะอาด, Broad + Creative 3–5 ชุด, ยิงเข้า LDP','bot','pastel-mint')]
+    steps=[('DAY 1','สร้าง LDP','ราคา/แพ็ก/วิธีใช้/FAQ/รีวิว + ปุ่ม LINE','pink','pastel-pink'),('DAY 2','ตั้ง Tracking','UTM, Scroll, LineClick, n8n, Dashboard','top','pastel-blue'),('DAY 3','ทำ Data Clean','Buyer / High Value / Bad Lead / Lost Price','amber','pastel-amber'),('DAY 4','Launch Test','Broad + Creative 3–5 ชุด งบ 300–500/วัน','bot','pastel-mint')]
     for col,x in zip([d1,d2,d3,d4],steps):
         with col: st.markdown(f'<div class="date-card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><h4>{x[1]}</h4><p>{x[2]}</p></div>', unsafe_allow_html=True)
     d5,d6,d7=st.columns(3)
-    with d5: st.markdown('<div class="date-card pastel-sky"><span class="pill top">DAY 5–6</span><h4>Monitor</h4><p>ดู LPV, LINE Click, Price Accepted, Lost Price ปิดตัวที่เข้า Kill Rule และเก็บตัวที่มี Qualified Lead</p></div>', unsafe_allow_html=True)
-    with d6: st.markdown('<div class="date-card pastel-lav"><span class="pill mid">DAY 7</span><h4>Executive Review</h4><p>สรุปว่า Creative ไหนพาคนรับราคา Audience ไหนคุณภาพดีที่สุด CAC เบื้องต้น และควร scale / pivot / ปรับ offer หรือไม่</p></div>', unsafe_allow_html=True)
-    with d7: st.markdown('<div class="date-card pastel-mint"><span class="pill bot">NEXT STEP</span><h4>Scale Decision</h4><p>ขยายเฉพาะชุดที่มี Qualified Lead และมีโอกาสทำ AOV เป็นแพ็กใหญ่ 3–5 ซอง</p></div>', unsafe_allow_html=True)
+    with d5: st.markdown('<div class="date-card pastel-sky"><span class="pill top">DAY 5–6</span><h4>Monitor</h4><p>ดู LPV, LINE Click, Price Accepted, Lost Price ปิดตัวที่เข้า Kill Rule</p></div>', unsafe_allow_html=True)
+    with d6: st.markdown('<div class="date-card pastel-lav"><span class="pill mid">DAY 7</span><h4>Executive Review</h4><p>สรุป Creative / Audience / CAC / Lead Quality และตัดสินใจ Scale หรือ Pivot</p></div>', unsafe_allow_html=True)
+    with d7: st.markdown('<div class="date-card pastel-mint"><span class="pill bot">NEXT</span><h4>Scale Decision</h4><p>ขยายเฉพาะชุดที่มี Qualified Lead และมีโอกาสดัน AOV แพ็ก 3–5 ซอง</p></div>', unsafe_allow_html=True)
     close_module()
 
 def render_executive_report_tab():
-    render_exec_summary(); render_exec_situation(); render_exec_problem_breakdown(); render_exec_funnel_strategy(); render_exec_measurement(); render_exec_kpi_guardrail(); render_exec_data_clean(); render_exec_creative(); render_exec_roadmap()
+    render_exec_storyline(); render_exec_gap_map(); render_exec_funnel_strategy(); render_exec_signal_ladder(); render_exec_measurement_system(); render_exec_guardrail(); render_exec_before_after(); render_exec_roadmap()
 
 def render_planning_tab():
     render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder(); render_lower_funnel()
