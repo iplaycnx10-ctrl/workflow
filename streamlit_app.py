@@ -127,6 +127,16 @@ def black_close(): st.markdown('</div>', unsafe_allow_html=True)
 def render_exec_black_cover():
     st.markdown('<div class="exec-black"><div class="black-kicker">EXECUTIVE REPORT · FIX CLASSIC</div><div class="system-label">Creative-Dependent System → Tracking-Driven Growth System</div><p class="system-sub">เป้าหมายของแผนนี้ไม่ใช่แค่เปลี่ยน Creative แต่คือสร้างระบบที่ Meta, ทีมแอดมิน และผู้บริหารมองเห็น Journey เดียวกัน ตั้งแต่ Ads → LDP → LINE → Order → Revenue</p></div>', unsafe_allow_html=True)
 
+def render_exec_business_symptom():
+    black_open('00_BUSINESS_SYMPTOM','ข้อมูลเชิงลึก: ต้นทุนข้อความดูเหมือนถูก แต่ต้นทุนลูกค้าจริงยังแพง','ระบบปัจจุบันยังสร้าง Message ได้ แต่ไม่สามารถเปลี่ยน Message เหล่านั้นเป็นยอดขายได้อย่างมีประสิทธิภาพ ทำให้ CAC จริงสูงและทีม Admin ต้องใช้แรงกับ Lead ที่ยังไม่พร้อมซื้อ')
+    c1,c2,c3,c4=st.columns(4)
+    items=[('CAC จริงแพง','Cost per Message ถูก แต่ปิดการขายต่ำ ทำให้ต้นทุนต่อลูกค้าซื้อจริงสูง','accent-red','grad-red'),('Lead Quality ต่ำ','คนทักจำนวนมากยังเป็นกลุ่มถามราคา อยากรู้เฉย ๆ หรือยังไม่ผ่านการกรองก่อนเข้าแชท','accent-gold','grad-gold'),('Admin Load สูง','ทีมแอดมินต้องเสียเวลาคัด Lead เองในแชท แต่ Close Rate ไม่โตตามจำนวนข้อความ','accent-purple','grad-purple'),('พึ่ง Creative + Offer','ยอดขายยังขึ้นกับครีเอทีฟโดน โปรแรง และแอดมินปิดเก่ง มากกว่าระบบข้อมูลที่ Scale ได้','accent-cyan','grad-cyan')]
+    for col,x in zip([c1,c2,c3,c4],items):
+        with col: st.markdown(f'<div class="black-node {x[3]}"><span class="black-pill">SYMPTOM</span><h4 class="{x[2]}">{x[0]}</h4><p>{x[1]}</p></div>', unsafe_allow_html=True)
+    st.markdown('<div class="black-line"></div>', unsafe_allow_html=True)
+    st.markdown('<div class="flow-step grad-green"><h4>Executive Headline</h4><p>โจทย์หลักไม่ใช่การทำให้คนทักถูกลงอีก แต่คือการยกระดับจาก “Message Volume” ไปสู่ “Qualified Lead และ Buyer Signal” เพื่อให้ทุกบาทของโฆษณาสร้างโอกาสปิดการขายจริง</p></div>', unsafe_allow_html=True)
+    black_close()
+
 def render_exec_current_system():
     black_open('01_CURRENT_SYSTEM','Current System: ระบบปัจจุบันยังพึ่ง Creative และแชทมากเกินไป','เมื่อ Funnel เป็น Ads → Message → Admin ระบบจะเห็นแค่ข้อความเข้า แต่ไม่เห็นว่า lead นั้นมีคุณภาพพอจะซื้อหรือไม่')
     c1,a1,c2,a2,c3,a3,c4=st.columns([1,.08,1,.08,1,.08,1])
@@ -186,7 +196,7 @@ def render_exec_final_insight():
     black_close()
 
 def render_executive_report_tab():
-    render_exec_black_cover(); render_exec_current_system(); render_exec_core_problem(); render_exec_proposed_system(); render_exec_data_layer(); render_exec_platform_expansion(); render_exec_final_insight()
+    render_exec_black_cover(); render_exec_business_symptom(); render_exec_current_system(); render_exec_core_problem(); render_exec_proposed_system(); render_exec_data_layer(); render_exec_platform_expansion(); render_exec_final_insight()
 
 def render_planning_tab():
     render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder(); render_lower_funnel()
