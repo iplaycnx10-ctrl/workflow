@@ -11,7 +11,7 @@ def render_theme():
 
 def open_module(t,d): st.markdown(f'<div class="module-wrap"><div class="module-title">{t}</div><p class="module-desc">{d}</p>', unsafe_allow_html=True)
 def close_module(): st.markdown('</div>', unsafe_allow_html=True)
-def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — Smoking Candy Workflow</h1><div class="subtitle">แยกหน้าเป็น วางแผนงาน และ แนวทางแก้ไขเบื้องต้น เพื่อดูทั้งแผนยิงและทางแก้ปัญหายอดตกในบอร์ดเดียว</div></div>', unsafe_allow_html=True)
+def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — Smoking Candy Workflow</h1><div class="subtitle">แยก Modular เป็นขั้นตอน: วางแผนงาน → ปัญหาที่เจอ → แนวทางแก้ไข</div></div>', unsafe_allow_html=True)
 
 def render_budget_plan():
     open_module('00_BUDGET_AND_AD_MANAGEMENT_PLAN','งบเฉลี่ยสำหรับเริ่มยิงและแผนแบ่งงบตอน Manage Ads')
@@ -104,7 +104,7 @@ def render_root_cause_summary():
     close_module()
 
 def render_fix_direction_summary():
-    open_module('03_FIX_DIRECTION_SECTION','แนวทางของเราในการแก้ไขเบื้องต้น')
+    open_module('01_FIX_DIRECTION_SECTION','แนวทางของเราในการแก้ไขเบื้องต้น')
     a,b,c=st.columns(3)
     with a: st.markdown('<div class="ci-card pastel-blue"><span class="pill top">แนวทาง 01</span><h3>กลับมายิงมือก่อน</h3><p>ลดการพึ่ง Advantage+ ในช่วงที่ Pixel/Event ยังไม่พร้อม แล้วกลับมาคุมโครงสร้าง Campaign ด้วยมือ</p><div class="ci-meta"><div><b>Cold</b><br>ใช้ Traffic CI หา Persona และ Interest</div><div><b>Warm</b><br>ใช้ Retarget คนดู/คลิก/Engage/Inbox</div><div><b>Budget</b><br>แบ่งงบเทสเล็กก่อนโยกงบ</div><div><b>Goal</b><br>หา Signal คุณภาพก่อน Scale</div></div></div>', unsafe_allow_html=True)
     with b: st.markdown('<div class="ci-card pastel-pink"><span class="pill pink">แนวทาง 02</span><h3>ใช้ Creative คัดคน</h3><p>Creative ต้องไม่ใช่แค่สวย แต่ต้องบอกปัญหา กลุ่มเป้าหมาย ราคา และเหตุผลให้คนที่ไม่ใช่ออกไปตั้งแต่ต้น</p><div class="ci-meta"><div><b>Persona</b><br>คู่รัก / คนในบ้าน / ผู้ดูแลผู้สูงอายุ</div><div><b>Hook</b><br>กลิ่นบุหรี่กระทบคนรอบตัว</div><div><b>Message</b><br>เริ่มลด ไม่ขายว่าเลิกทันที</div><div><b>CTA</b><br>ทัก Line OA / รับโปร</div></div></div>', unsafe_allow_html=True)
@@ -112,7 +112,7 @@ def render_fix_direction_summary():
     close_module()
 
 def render_action_plan_summary():
-    open_module('04_ACTION_PLAN_SECTION','สิ่งที่ต้องทำต่อทันที')
+    open_module('02_ACTION_PLAN_SECTION','สิ่งที่ต้องทำต่อทันที')
     s1,s2,s3,s4=st.columns(4)
     actions=[('ACTION 01','พักตัวที่เผางบ','หยุด/ลดงบชุดที่ Spend สูงแต่ไม่มี Inbox, Line OA Add, Comment Intent หรือยอดขายจริง','rose','pastel-rose'),('ACTION 02','เปิด Manual Test','เปิด Traffic CI 2 Persona พร้อม Retarget กลุ่มเก่า ตั้งแต่วันแรก แล้ว monitor 1–3 วัน','top','pastel-blue'),('ACTION 03','ทำ CI แบบคัดลูกค้า','ใส่ Pain + ราคา + ส่งฟรี + CTA ชัด เช่น แพ็ก 3 ซอง 1,000 เพื่อกรองลูกค้าที่ไม่พร้อมซื้อ','pink','pastel-pink'),('ACTION 04','อ่านผลจาก Intent','ตัดสินใจจาก CTR, CPC, Engage, Comment, Inbox, Line OA Add และคุณภาพบทสนทนา ไม่ดู ROAS อย่างเดียว','bot','pastel-mint')]
     for col,x in zip([s1,s2,s3,s4],actions):
@@ -123,14 +123,18 @@ def render_action_plan_summary():
 def render_planning_tab():
     render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder(); render_lower_funnel()
 
-def render_fix_tab():
-    render_problem_summary(); render_root_cause_summary(); render_fix_direction_summary(); render_action_plan_summary()
+def render_problem_tab():
+    render_problem_summary(); render_root_cause_summary()
 
-def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Board · Smoking Candy · Planning + Problem/Fix Summary</div>', unsafe_allow_html=True)
+def render_solution_tab():
+    render_fix_direction_summary(); render_action_plan_summary()
+
+def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Board · Smoking Candy · Modular Workflow</div>', unsafe_allow_html=True)
 def main():
     render_theme(); render_header()
-    tab_plan, tab_fix = st.tabs(['📌 วางแผนงาน', '🛠️ แนวทางแก้ไขเบื้องต้น'])
+    tab_plan, tab_problem, tab_solution = st.tabs(['📌 วางแผนงาน', '⚠️ ปัญหาที่เจอ', '🛠️ แนวทางแก้ไข'])
     with tab_plan: render_planning_tab()
-    with tab_fix: render_fix_tab()
+    with tab_problem: render_problem_tab()
+    with tab_solution: render_solution_tab()
     render_footer()
 if __name__=='__main__': main()
