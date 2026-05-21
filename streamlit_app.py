@@ -63,6 +63,7 @@ def render_theme():
         .placeholder { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.65); border-radius: 20px; padding: 18px; min-height: 190px; height: auto; overflow: visible; }
         .mini-card { min-height: 175px; height: auto; overflow: visible; }
         .insight-card { min-height: 160px; margin-top: 18px; overflow: visible; }
+        .mid-target-card { min-height: 260px; }
         .person-icon { font-size: 42px; margin-bottom: 8px; }
         .unknown-card { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.72); border-radius: 20px; padding: 18px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; box-shadow: 0 12px 36px rgba(31,41,55,0.025); }
         .unknown-mark { font-size: 58px; font-weight: 900; color:#94a3b8; line-height:1; margin-bottom: 10px; }
@@ -92,7 +93,7 @@ def render_header():
             <h1 class="title">ลูกอมบุหรี่ — TOP Funnel CI Workflow</h1>
             <div class="subtitle">
                 โฟกัสงานแรกคือ CI ของ TOP Funnel: แยก Persona → ทำ Creative → Test → Scale<br>
-                MID/BOT จะถูกย้ายลงล่างเป็นขั้นต่อไปหลังจาก TOP CI เริ่มเห็นสัญญาณ
+                MID Target จะใช้รับคนที่เริ่มสนใจจาก CI แล้วค่อยอธิบายเหตุผล สร้างความเชื่อ และคัด Intent ต่อ
             </div>
         </div>
         """,
@@ -141,10 +142,31 @@ def render_persona_creative():
 
 
 # =========================================================
-# 05_TEST_AND_SCALE_PLACEHOLDER_MODULE
+# 05_MID_TARGET_MODULE
+# =========================================================
+def render_mid_target():
+    open_module("03_MID_TARGET_MODULE", "รับคนที่เริ่มสนใจจาก TOP CI แล้วทำให้เข้าใจ เชื่อ และแยก Intent ก่อนส่งไป BOT")
+    m1, m2, m3 = st.columns(3)
+    with m1:
+        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">MID ROLE</span><h4>กลุ่มเป้าหมายกลางน้ำ</h4><p>คนที่เห็น/ดู/คลิก/มีปฏิสัมพันธ์กับ TOP CI แล้ว แต่ยังไม่พร้อมซื้อทันที ต้องให้เหตุผลก่อนว่า “ทำไมต้องลอง” และ “สินค้าช่วยตรงไหน”</p></div>""", unsafe_allow_html=True)
+    with m2:
+        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">TARGET SIGNAL</span><h4>สัญญาณที่ใช้ดึงเข้า MID</h4><p>Video View, Engagement, Click, Save, Comment, Inbox เบื้องต้น หรือคนที่ตอบสนองกับ Persona เช่น คู่รัก / ดูแลผู้สูงอายุ / กลิ่นติดคนในบ้าน</p></div>""", unsafe_allow_html=True)
+    with m3:
+        st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">MID CONTENT</span><h4>คอนเทนต์ที่ควรใช้</h4><p>Explainer, FAQ, รีวิว, Before/After Situation, วิธีใช้ลูกอมแทนจังหวะอยากสูบ และคอนเทนต์ที่เชื่อม Pain → Solution → Reason to Buy</p></div>""", unsafe_allow_html=True)
+
+    d1, d2 = st.columns(2)
+    with d1:
+        st.markdown("""<div class="insight-card"><span class="pill top">MID DETAIL</span><h4>หน้าที่ของ MID Target</h4><p>MID ไม่ได้ปิดการขายทันที แต่ทำหน้าที่กรองคนที่มีความสนใจจริงจาก TOP CI ว่าเขาสนใจเพราะอะไร เช่น สนใจเพราะแฟนบ่นเรื่องกลิ่น หรือสนใจเพราะเป็นห่วงผู้สูงอายุในบ้าน จากนั้นค่อยส่งต่อกลุ่ม Intent สูงไป BOT</p></div>""", unsafe_allow_html=True)
+    with d2:
+        st.markdown("""<div class="insight-card"><span class="pill amber">OPTIMIZE NOTE</span><h4>สิ่งที่ต้องดูตอนเทส MID</h4><p>ดู CTR คุณภาพ, Comment intent, Inbox คุณภาพ, LPV/VC/ATC และคำถามซ้ำจากลูกค้า ถ้าคำถามซ้ำเยอะ แปลว่า MID Content ยังต้องอธิบายเพิ่มก่อนเอาไปปิดการขาย</p></div>""", unsafe_allow_html=True)
+    close_module()
+
+
+# =========================================================
+# 06_TEST_AND_SCALE_PLACEHOLDER_MODULE
 # =========================================================
 def render_test_and_scale_placeholder():
-    open_module("03_TEST_AND_SCALE_PLACEHOLDER_MODULE", "พื้นที่ว่างสำหรับใส่ผล Test, Hook ที่ชนะ, Visual ที่เวิร์ก และ CI ที่ควร Scale")
+    open_module("04_TEST_AND_SCALE_PLACEHOLDER_MODULE", "พื้นที่ว่างสำหรับใส่ผล Test, Hook ที่ชนะ, Visual ที่เวิร์ก และ CI ที่ควร Scale")
     t1, t2, t3 = st.columns(3)
     with t1:
         st.markdown("""<div class="placeholder"><span class="pill amber">TEST SLOT A</span><h4>Hook Test</h4><p>เว้นไว้ใส่ Hook ที่ต้องเทส เช่น คู่รัก / ผู้สูงอายุ / กลิ่นติดตัว</p></div>""", unsafe_allow_html=True)
@@ -156,23 +178,23 @@ def render_test_and_scale_placeholder():
 
 
 # =========================================================
-# 06_LOWER_FUNNEL_MODULE
+# 07_LOWER_FUNNEL_MODULE
 # =========================================================
 def render_lower_funnel():
-    open_module("04_LOWER_FUNNEL_MODULE", "ย้าย MID/BOT ลงล่างไว้เป็นขั้นถัดไป หลัง TOP Funnel เริ่มเจอ CI และกลุ่มที่ตอบสนอง")
+    open_module("05_BOT_FUNNEL_MODULE", "BOT จะใช้หลังจาก MID คัดคนสนใจจริงแล้ว เพื่อ Retarget และปิดการขาย")
     m1, m2 = st.columns(2)
     with m1:
-        st.markdown("""<div class="mini-card"><span class="pill mid">MID FUNNEL</span><h4>Trust / Explain</h4><p>หลัง TOP CI มีคนสนใจ ค่อยใช้ Explainer, FAQ, Review เพื่อทำให้เชื่อและเข้าใจสินค้า</p></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="mini-card"><span class="pill mid">MID SUMMARY</span><h4>Trust / Explain</h4><p>หลัง TOP CI มีคนสนใจ ค่อยใช้ Explainer, FAQ, Review เพื่อทำให้เชื่อและเข้าใจสินค้า</p></div>""", unsafe_allow_html=True)
     with m2:
         st.markdown("""<div class="mini-card"><span class="pill bot">BOT FUNNEL</span><h4>Close / Offer</h4><p>Retarget คน Intent สูงด้วย Offer, Bundle, Review Screenshot และ CTA ไป Shopee / Inbox</p></div>""", unsafe_allow_html=True)
     close_module()
 
 
 # =========================================================
-# 07_FOOTER_MODULE
+# 08_FOOTER_MODULE
 # =========================================================
 def render_footer():
-    st.markdown('<div class="footer-note">Modular Board v0.5 · Expandable Cards · Text Safe Layout</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer-note">Modular Board v0.6 · Added MID Target Module · TOP → MID → BOT</div>', unsafe_allow_html=True)
 
 
 # =========================================================
@@ -183,6 +205,7 @@ def main():
     render_header()
     render_top_ci_workflow()
     render_persona_creative()
+    render_mid_target()
     render_test_and_scale_placeholder()
     render_lower_funnel()
     render_footer()
