@@ -11,7 +11,7 @@ def render_theme():
 
 def open_module(t,d): st.markdown(f'<div class="module-wrap"><div class="module-title">{t}</div><p class="module-desc">{d}</p>', unsafe_allow_html=True)
 def close_module(): st.markdown('</div>', unsafe_allow_html=True)
-def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — TOP Funnel CI Workflow</h1><div class="subtitle">ทุก CI เริ่มยิงตั้งแต่วันที่ 1 → วันที่ 1–3 คือช่วง monitor / optimize / เพิ่ม layer retarget</div></div>', unsafe_allow_html=True)
+def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — Smoking Candy Workflow</h1><div class="subtitle">แยกหน้าเป็น วางแผนงาน และ แนวทางแก้ไขเบื้องต้น เพื่อดูทั้งแผนยิงและทางแก้ปัญหายอดตกในบอร์ดเดียว</div></div>', unsafe_allow_html=True)
 
 def render_budget_plan():
     open_module('00_BUDGET_AND_AD_MANAGEMENT_PLAN','งบเฉลี่ยสำหรับเริ่มยิงและแผนแบ่งงบตอน Manage Ads')
@@ -83,7 +83,50 @@ def render_lower_funnel():
     with c2: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">BOT FUNNEL</span><h4>Close / Offer</h4><p>Retarget คนที่เข้า Line OA / ทัก / สนใจสูง ด้วย Offer, Bundle, Review Screenshot และ CTA ซื้อ</p></div>', unsafe_allow_html=True)
     close_module()
 
-def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Board · All CI Launch Day 1 · Monitor Day 1–3</div>', unsafe_allow_html=True)
+def render_initial_fix_guideline():
+    open_module('01_INITIAL_FIX_SUMMARY','แนวทางแก้ไขเบื้องต้นสำหรับเคสยอดตกหลังใช้ระบบเดิม')
+    a,b,c=st.columns(3)
+    with a: st.markdown('<div class="mini-card pastel-rose"><span class="pill rose">PROBLEM</span><h4>ยอดตก / งบไหลไม่คุ้ม</h4><p>เคสเดิมมีความเสี่ยงจากการปล่อยระบบหาคนกว้างเกินไป ทั้งที่สินค้าเป็นสินค้าต้องอธิบายและต้องคัด Intent ก่อนซื้อ</p></div>', unsafe_allow_html=True)
+    with b: st.markdown('<div class="mini-card pastel-amber"><span class="pill amber">CAUSE</span><h4>Pixel / Event ไม่พร้อม</h4><p>ถ้า Purchase Event ไม่แม่น หรือไม่มี Event ที่ไว้ใจได้ ไม่ควรให้ระบบ Optimize แบบกว้างเต็มที่ เพราะ AI จะเรียนรู้จากสัญญาณที่มั่ว</p></div>', unsafe_allow_html=True)
+    with c: st.markdown('<div class="mini-card pastel-mint"><span class="pill bot">FIX</span><h4>กลับมายิงมือ + คุม Funnel</h4><p>เริ่มจากคุม Persona, Creative, Retarget และ Offer ด้วยมือก่อน เพื่อสร้างสัญญาณคุณภาพ แล้วค่อยขยายเมื่อเห็นตัวชนะ</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_manual_ads_fix():
+    open_module('02_MANUAL_ADS_FIX','แก้เกมโฆษณา: ลดการพึ่ง Advantage+ และกลับมาคุมกลุ่มเอง')
+    c1,c2,c3,c4=st.columns(4)
+    fixes=[('STEP 01','หยุดปล่อยกว้างเกิน','พักแคมเปญที่กินงบแต่ไม่สร้างยอด หรือไม่มีสัญญาณคุณภาพ เช่น Inbox/Line OA/ซื้อจริง','rose','pastel-rose'),('STEP 02','แยก Cold / Warm','Cold ใช้ Traffic CI เพื่อหา Interest ส่วน Warm ใช้ Retarget คนที่เคย Engage, View, Inbox, Click','top','pastel-blue'),('STEP 03','ใช้ Creative คัดคน','ภาพ/วิดีโอต้องบอกปัญหาชัด ราคา/แพ็กต้องชัด เพื่อกันคนไม่พร้อมซื้อออกตั้งแต่ต้น','pink','pastel-pink'),('STEP 04','อ่านผล 1–3 วัน','ดู CTR, CPC, Engage, Comment intent, Inbox/Line OA Add แล้วโยกงบไปตัวที่มี Intent จริง','bot','pastel-mint')]
+    for col,x in zip([c1,c2,c3,c4],fixes):
+        with col: st.markdown(f'<div class="card {x[4]}"><span class="pill {x[3]}">{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_offer_filter_fix():
+    open_module('03_OFFER_AND_CUSTOMER_FILTER','แก้เกมหน้าขาย: ใช้ราคาและแพ็กช่วยคัดลูกค้าที่มีเงินจริง')
+    p1,p2,p3=st.columns(3)
+    with p1: st.markdown('<div class="budget-card pastel-pink"><span class="pill pink">OFFER</span><h4>3 ซอง 1,000 ส่งฟรี</h4><div class="budget-number">1,000฿</div><p>ใช้เป็นแพ็กหลักสำหรับคัดคนที่อยากเริ่มลดจริง ไม่เน้นดึงคนถูกอย่างเดียว</p></div>', unsafe_allow_html=True)
+    with p2: st.markdown('<div class="budget-card pastel-lav"><span class="pill mid">MESSAGE</span><h4>ไม่ขายว่าเลิกทันที</h4><p>เปลี่ยนเป็น “เริ่มลดแบบค่อยเป็นค่อยไป” เพื่อไม่ Overclaim และลดแรงต้านจากลูกค้าที่ไม่เชื่อ</p></div>', unsafe_allow_html=True)
+    with p3: st.markdown('<div class="budget-card pastel-mint"><span class="pill bot">CTA</span><h4>ทัก Line OA / รับโปร</h4><p>ใช้ CTA ที่พาคนไปคุยต่อ เพราะสินค้านี้ต้องมีการตอบคำถามก่อนปิด ไม่ควรหวังปิดจากแอดทันทีทุกคน</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_tracking_fix():
+    open_module('04_TRACKING_AND_DECISION_RULE','แก้เกมระบบวัดผล: อย่าให้ ROAS หลอกถ้า Tracking ยังไม่พร้อม')
+    k1,k2=st.columns(2)
+    with k1: st.markdown('<div class="insight-card pastel-amber"><span class="pill amber">TRACKING RISK</span><h4>ถ้า Pixel/Event ยังไม่ชัวร์ ให้ใช้สัญญาณกลางทางก่อน</h4><p>ประเมินจาก CTR, CPC, Video View, Engage, Save, Share, Comment Intent, Inbox, Line OA Add และคุณภาพบทสนทนา แทนการดู ROAS อย่างเดียว</p></div>', unsafe_allow_html=True)
+    with k2: st.markdown('<div class="insight-card pastel-sky"><span class="pill top">DECISION RULE</span><h4>ตัดสินใจจาก Intent ไม่ใช่แค่ยอดซื้อวันแรก</h4><p>ตัวไหนมีคลิกถูกแต่ไม่มี Intent ให้ลดงบ ตัวไหนคลิกแพงกว่าแต่มี Inbox/Line OA/Comment คุณภาพ ให้ถือเป็นตัวที่ควรเทสต่อ</p></div>', unsafe_allow_html=True)
+    r1,r2,r3=st.columns(3)
+    with r1: st.markdown('<div class="placeholder pastel-rose"><span class="pill rose">KILL</span><h4>ควรหยุด</h4><p>ใช้เงินแล้วไม่มี Engage คุณภาพ ไม่มี Inbox ไม่มี Comment intent และ CPC/CPM แพงผิดปกติ</p></div>', unsafe_allow_html=True)
+    with r2: st.markdown('<div class="placeholder pastel-amber"><span class="pill amber">HOLD</span><h4>ควรรอดู</h4><p>เริ่มมี View/Engage แต่ยังไม่พอให้ตัดสินใจ ให้รอครบช่วง Day 1–3 หรือปรับ Hook/Visual ก่อน</p></div>', unsafe_allow_html=True)
+    with r3: st.markdown('<div class="placeholder pastel-mint"><span class="pill bot">SCALE</span><h4>ควรเพิ่มงบ</h4><p>มี Intent จริง เช่น Inbox, Line OA Add, Comment ถามราคา/วิธีใช้ หรือกลุ่ม Warm เริ่มตอบสนองต่อ Retarget</p></div>', unsafe_allow_html=True)
+    close_module()
+
+def render_planning_tab():
+    render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder(); render_lower_funnel()
+
+def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Board · Smoking Candy · Planning + Initial Fix</div>', unsafe_allow_html=True)
 def main():
-    render_theme(); render_header(); render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder(); render_lower_funnel(); render_footer()
+    render_theme(); render_header()
+    tab_plan, tab_fix = st.tabs(['📌 วางแผนงาน', '🛠️ แนวทางแก้ไขเบื้องต้น'])
+    with tab_plan: render_planning_tab()
+    with tab_fix:
+        render_initial_fix_guideline(); render_manual_ads_fix(); render_offer_filter_fix(); render_tracking_fix()
+    render_footer()
 if __name__=='__main__': main()
