@@ -42,15 +42,15 @@ def render_theme():
         .module-head { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom: 16px; }
         .module-title { font-size: 14px; font-weight: 850; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
         .module-desc { color: var(--muted); font-size: 13px; line-height:1.55; margin: 4px 0 0; }
-        .hero, .card, .mini-card, .persona-card, .test-card, .insight-card { background: rgba(255,255,255,0.9); border: 1px solid var(--line); box-shadow: 0 12px 36px rgba(31,41,55,0.045); }
+        .hero, .card, .mini-card, .persona-card, .test-card, .insight-card, .ci-card { background: rgba(255,255,255,0.9); border: 1px solid var(--line); box-shadow: 0 12px 36px rgba(31,41,55,0.045); }
         .hero { border-radius: 28px; padding: 28px 30px; margin-bottom: 20px; }
         .eyebrow { display: inline-flex; padding: 7px 12px; border-radius: 999px; background: #f8fafc; border: 1px solid var(--line); color: var(--muted); font-size: 13px; margin-bottom: 12px; }
         .title { font-size: 38px; font-weight: 850; letter-spacing: -0.04em; margin: 0; color: var(--ink); }
         .subtitle { color: var(--muted); font-size: 16px; margin-top: 8px; line-height: 1.7; }
         .flow-line { height: 3px; border-radius: 99px; background: linear-gradient(90deg, #bfdbfe, #ddd6fe, #bbf7d0); margin: 12px 0 20px 0; }
         .card { border-radius: 24px; padding: 22px; min-height: 270px; height: auto; overflow: visible; }
-        .card h3, .mini-card h4, .persona-card h3, .test-card h4, .insight-card h4 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
-        .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p, .insight-card p { color: var(--muted); line-height: 1.62; font-size: 14px; }
+        .card h3, .mini-card h4, .persona-card h3, .test-card h4, .insight-card h4, .ci-card h3 { margin: 0 0 8px 0; letter-spacing: -0.02em; color: var(--ink); }
+        .card p, .card li, .mini-card p, .persona-card p, .persona-card li, .test-card p, .insight-card p, .ci-card p, .ci-card li { color: var(--muted); line-height: 1.62; font-size: 14px; }
         .pill { display: inline-block; padding: 7px 11px; border-radius: 999px; font-size: 12px; font-weight: 750; margin-bottom: 12px; }
         .top { background: var(--blue); color: var(--blue-text); }
         .mid { background: var(--lavender); color: var(--lavender-text); }
@@ -58,12 +58,15 @@ def render_theme():
         .pink { background: var(--pink); color: var(--pink-text); }
         .amber { background: var(--amber); color: var(--amber-text); }
         .arrow-row { display: flex; align-items: center; justify-content: center; min-height: 270px; margin: 0; color: #c4c9d4; font-size: 30px; font-weight: 800; }
-        .mini-card, .persona-card, .test-card, .insight-card { border-radius: 20px; padding: 18px; }
+        .mini-card, .persona-card, .test-card, .insight-card, .ci-card { border-radius: 20px; padding: 18px; }
         .persona-card, .unknown-card { min-height: 405px; height: auto; overflow: visible; }
         .placeholder { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.65); border-radius: 20px; padding: 18px; min-height: 190px; height: auto; overflow: visible; }
         .mini-card { min-height: 175px; height: auto; overflow: visible; }
         .insight-card { min-height: 160px; margin-top: 18px; overflow: visible; }
         .mid-target-card { min-height: 260px; }
+        .ci-card { min-height: 360px; margin-top: 18px; }
+        .ci-meta { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+        .ci-meta div { background:#f8fafc; border:1px solid var(--line); border-radius:14px; padding:10px; color:var(--muted); font-size:13px; line-height:1.45; }
         .person-icon { font-size: 42px; margin-bottom: 8px; }
         .unknown-card { border: 1.5px dashed #cbd5e1; background: rgba(248,250,252,0.72); border-radius: 20px; padding: 18px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; box-shadow: 0 12px 36px rgba(31,41,55,0.025); }
         .unknown-mark { font-size: 58px; font-weight: 900; color:#94a3b8; line-height:1; margin-bottom: 10px; }
@@ -154,6 +157,12 @@ def render_mid_target():
     with m3:
         st.markdown("""<div class="mini-card mid-target-card"><span class="pill mid">MID CONTENT</span><h4>คอนเทนต์ที่ควรใช้</h4><p>Explainer, FAQ, รีวิว, Before/After Situation, วิธีใช้ลูกอมแทนจังหวะอยากสูบ และคอนเทนต์ที่เชื่อม Pain → Solution → Reason to Buy</p></div>""", unsafe_allow_html=True)
 
+    ci1, ci2 = st.columns(2)
+    with ci1:
+        st.markdown("""<div class="ci-card"><span class="pill mid">MID CI 01</span><h3>Explainer / FAQ: ลูกอมช่วยตรงไหน?</h3><p><b>Goal:</b> ทำให้คนที่เริ่มสนใจเข้าใจว่าไม่ได้ขายเวทมนตร์ แต่เป็นตัวช่วยในจังหวะที่ปากอยากสูบ/อยากเคี้ยว</p><div class="ci-meta"><div><b>Hook</b><br>“อยากลดบุหรี่ แต่ปากยังอยากสูบอยู่ใช่ไหม?”</div><div><b>Format</b><br>Short explainer / Talking head / Motion text</div><div><b>Key Message</b><br>ใช้ลูกอมเป็นตัวช่วยคั่นจังหวะอยากสูบ</div><div><b>CTA</b><br>ลองเริ่มจากลดทีละมวน</div></div><ul><li>ตอบคำถาม: ใช้ตอนไหน / เหมาะกับใคร</li><li>โยง Pain จาก TOP → Solution</li><li>คัดคนที่อ่าน/ดูแล้วเริ่มมี Intent</li></ul></div>""", unsafe_allow_html=True)
+    with ci2:
+        st.markdown("""<div class="ci-card"><span class="pill mid">MID CI 02</span><h3>Review / Before-After Situation</h3><p><b>Goal:</b> ทำให้คนเชื่อขึ้นผ่านสถานการณ์จริง เช่น จากเดิมคนรัก/คนในบ้านไม่โอเคกับกลิ่น → เริ่มมีตัวช่วยติดตัว</p><div class="ci-meta"><div><b>Hook</b><br>“ไม่ได้เลิกได้ทันที แต่เริ่มลดได้จริงจังกว่าเดิม”</div><div><b>Format</b><br>POV review / Testimonial / Before-After scene</div><div><b>Key Message</b><br>มีตัวช่วยแทนจังหวะสูบ ทำให้เริ่มคุมพฤติกรรมได้</div><div><b>CTA</b><br>ดูโปร / ทักถาม / กดไป Shopee</div></div><ul><li>ใช้มุมคู่รักหรือดูแลผู้สูงอายุต่อจาก TOP</li><li>เน้นความรู้สึก “เริ่มลดเพื่อคนข้างๆ”</li><li>ดู Comment/Inbox เพื่อแยกคนพร้อมซื้อ</li></ul></div>""", unsafe_allow_html=True)
+
     d1, d2 = st.columns(2)
     with d1:
         st.markdown("""<div class="insight-card"><span class="pill top">MID DETAIL</span><h4>หน้าที่ของ MID Target</h4><p>MID ไม่ได้ปิดการขายทันที แต่ทำหน้าที่กรองคนที่มีความสนใจจริงจาก TOP CI ว่าเขาสนใจเพราะอะไร เช่น สนใจเพราะแฟนบ่นเรื่องกลิ่น หรือสนใจเพราะเป็นห่วงผู้สูงอายุในบ้าน จากนั้นค่อยส่งต่อกลุ่ม Intent สูงไป BOT</p></div>""", unsafe_allow_html=True)
@@ -194,7 +203,7 @@ def render_lower_funnel():
 # 08_FOOTER_MODULE
 # =========================================================
 def render_footer():
-    st.markdown('<div class="footer-note">Modular Board v0.6 · Added MID Target Module · TOP → MID → BOT</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer-note">Modular Board v0.7 · Added MID CI Cards · TOP → MID → BOT</div>', unsafe_allow_html=True)
 
 
 # =========================================================
