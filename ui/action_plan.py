@@ -1,5 +1,6 @@
 import streamlit as st
 
+from ui.action_plan_styles import render_action_plan_styles
 from ui.action_plan_ldp import render_ldp_plan_tab
 from ui.action_plan_pixel import render_pixel_plan_tab
 from ui.action_plan_ga4 import render_ga4_plan_tab
@@ -9,6 +10,8 @@ from ui.action_plan_stability import render_stability_plan_tab
 
 
 def render_action_plan_module():
+    render_action_plan_styles()
+
     tabs = st.tabs([
         "01 ปรับ LDP",
         "02 Pixel",
