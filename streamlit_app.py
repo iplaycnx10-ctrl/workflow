@@ -16,7 +16,7 @@ def render_theme():
 
 def open_module(t,d): st.markdown(f'<div class="module-wrap"><div class="module-title">{t}</div><p class="module-desc">{d}</p>', unsafe_allow_html=True)
 def close_module(): st.markdown('</div>', unsafe_allow_html=True)
-def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — Smoking Candy Workflow</h1><div class="subtitle">แยก Modular เป็นขั้นตอน: วางแผนงาน → รายงานผู้บริหาร</div></div>', unsafe_allow_html=True)
+def render_header(): st.markdown('<div class="hero"><div class="eyebrow">🍬 Project Board · Pastel Minimal</div><h1 class="title">ลูกอมบุหรี่ — Smoking Candy Workflow</h1><div class="subtitle">แยก Modular เป็นขั้นตอน: วางแผนงาน → รายงานผู้บริหาร → Workflow Calendar</div></div>', unsafe_allow_html=True)
 
 def render_budget_plan():
     open_module('00_BUDGET_AND_AD_MANAGEMENT_PLAN','งบเฉลี่ยสำหรับเริ่มยิงและแผนแบ่งงบตอน Manage Ads')
@@ -94,6 +94,20 @@ def render_report_tab():
     with tab_action:
         render_action_plan_module()
 
+def render_workflow_report_scrope_tab():
+    open_module('WORK-FLOW - REPORT - SCROPE','พื้นที่สำหรับวาง Work Flow Calendar / Report Scope ข้างแทปรายงานผู้บริหาร')
+    st.markdown('''
+    <div class="action-plan-placeholder">
+        <span class="action-plan-kicker">WORKFLOW CALENDAR PLACEHOLDER</span>
+        <h3>วาง Work Flow Calendar ตรงนี้</h3>
+        <p>
+            ใช้แท็บนี้สำหรับจัด Calendar งาน / Scope รายงาน / Task รายวัน / Owner / Deadline / Status<br>
+            โครงนี้เตรียมไว้ให้ต่อเป็นตาราง Calendar หรือดึงข้อมูลจาก Google Sheet ภายหลังได้เลย
+        </p>
+    </div>
+    ''', unsafe_allow_html=True)
+    close_module()
+
 def render_planning_tab():
     render_budget_plan(); render_date_project(); render_top_ci_workflow(); render_persona_creative(); render_traffic_to_retarget_pipe(); render_mid_target(); render_test_and_scale_placeholder()
 
@@ -101,9 +115,10 @@ def render_footer(): st.markdown('<div class="footer-note">Pastel Marketing Boar
 
 def main():
     render_theme(); render_header()
-    tab_plan, tab_report = st.tabs(['📌 วางแผนงาน', '📊 รายงานผู้บริหาร'])
+    tab_plan, tab_report, tab_workflow_scope = st.tabs(['📌 วางแผนงาน', '📊 รายงานผู้บริหาร', '🗂️ work-flow - report - scrope'])
     with tab_plan: render_planning_tab()
     with tab_report: render_report_tab()
+    with tab_workflow_scope: render_workflow_report_scrope_tab()
     render_footer()
 
 if __name__=='__main__': main()
