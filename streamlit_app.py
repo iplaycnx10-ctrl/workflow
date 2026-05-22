@@ -97,12 +97,13 @@ def render_report_tab():
 def render_workflow_report_scrope_tab():
     open_module('WORK-FLOW - REPORT - SCROPE','พื้นที่สำหรับวาง Work Flow Calendar / Report Scope ข้างแทปรายงานผู้บริหาร')
     st.markdown('''
-    <div class="action-plan-placeholder">
-        <span class="action-plan-kicker">WORKFLOW CALENDAR PLACEHOLDER</span>
-        <h3>วาง Work Flow Calendar ตรงนี้</h3>
+    <div class="date-card pastel-amber">
+        <span class="pill amber">STEP 01 · WAITING</span>
+        <h4>รอทำเว็บไซต์เพื่อทำการติดตั้ง Tracking Pixel</h4>
         <p>
-            ใช้แท็บนี้สำหรับจัด Calendar งาน / Scope รายงาน / Task รายวัน / Owner / Deadline / Status<br>
-            โครงนี้เตรียมไว้ให้ต่อเป็นตาราง Calendar หรือดึงข้อมูลจาก Google Sheet ภายหลังได้เลย
+            <b>สถานะ:</b> รอเว็บไซต์พร้อมก่อนเริ่มติดตั้ง<br>
+            <b>เป้าหมาย:</b> เตรียมพื้นที่สำหรับติด Meta Pixel / GTM / GA4 เพื่อให้ระบบเก็บ Event ได้ถูกต้อง<br>
+            <b>สิ่งที่ต้องเช็กต่อ:</b> โครงเว็บ, ปุ่ม CTA, หน้า Thank You, Line OA click, Event ที่ต้องยิงกลับระบบ
         </p>
     </div>
     ''', unsafe_allow_html=True)
